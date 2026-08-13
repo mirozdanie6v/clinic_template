@@ -1,9 +1,9 @@
 name: Clinic template CI
 
 on:
+  pull_request:
   push:
     branches: [main]
-  pull_request:
 
 permissions:
   contents: read
@@ -16,9 +16,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Install dependencies
-        run: npm install
-      - name: Verify manual client pipeline
-        run: npm run build:client -- tests/fixtures/manual/passport.json
-      - name: Build application
-        run: npm run build
+      - run: npm install
+      - run: npm run build:client -- tests/fixtures/manual/passport.json
+      - run: npm run build:client -- clients/evo/passport.json
+      - run: npm run build
