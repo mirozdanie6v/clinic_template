@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "eslint .",
     "sync:client": "node scripts/sync-client-sources.mjs",
-    "build:client": "node scripts/build-client-v2.mjs",
+    "build:client": "node scripts/build-client-v3.mjs",
     "apply:clinic": "node scripts/apply-clinic-config.mjs"
   },
   "dependencies": {

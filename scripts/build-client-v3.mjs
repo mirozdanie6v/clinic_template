@@ -5,7 +5,7 @@ import { spawnSync } from "node:child_process";
 const root = process.cwd();
 const passportArg = process.argv[2] || "clients/_template/passport.json";
 const manifestPath = path.resolve(root, passportArg);
-const fail = (m) => { console.error(`client-v2: ${m}`); process.exit(1); };
+const fail = (m) => { console.error(`client-v3: ${m}`); process.exit(1); };
 if (!fs.existsSync(manifestPath)) fail(`passport not found: ${passportArg}`);
 const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
 let resolved = manifest;
@@ -26,7 +26,7 @@ if (manifest.schemaVersion === 2 && manifest.documents) {
   buildPath = tempPath;
 }
 
-const builder = resolved.catalog?.autoDiscoverNetwork ? "build-client-exact-network.mjs" : "build-client-routed.mjs";
+const builder = resolved.catalog?.autoDiscoverNetwork ? "build-client-exact-network-v2.mjs" : "build-client-routed.mjs";
 const build = spawnSync(process.execPath, [path.join(root, "scripts", builder), buildPath], { cwd: root, stdio: "inherit" });
 if (build.status !== 0) { if (tempPath) fs.rmSync(tempPath, { force: true }); process.exit(build.status || 1); }
 
@@ -42,4 +42,4 @@ if (fs.existsSync(runtimePath)) {
   fs.writeFileSync(runtimePath, JSON.stringify(runtime, null, 2) + "\n");
 }
 if (tempPath) fs.rmSync(tempPath, { force: true });
-console.log(`client-v2: built ${resolved.client?.name || passportArg} via ${builder}`);
+console.log(`client-v3: built ${resolved.client?.name || passportArg} via ${builder}`);
