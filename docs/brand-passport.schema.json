@@ -4,7 +4,7 @@
   "title": "Client Brand Passport",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schemaVersion", "client", "brand", "contacts", "locations", "catalog", "integrations"],
+  "required": ["schemaVersion", "client", "brand", "contacts", "locations", "dataSources", "catalog", "specialists", "integrations"],
   "properties": {
     "schemaVersion": {"const": 1},
     "client": {
@@ -26,8 +26,50 @@
     "contacts": {"type": "object", "additionalProperties": true},
     "locations": {"type": "array", "minItems": 1, "items": {"type": "object", "required": ["id", "name", "address"], "additionalProperties": true}},
     "content": {"type": "object", "additionalProperties": true},
+    "dataSources": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["catalog", "specialists", "booking"],
+      "properties": {
+        "catalog": {"$ref": "#/$defs/catalogRoute"},
+        "specialists": {"$ref": "#/$defs/specialistRoute"},
+        "booking": {"$ref": "#/$defs/bookingRoute"}
+      }
+    },
     "catalog": {"type": "object", "required": ["imports", "manualGroups"], "additionalProperties": true},
-    "specialists": {"type": "object", "additionalProperties": true},
+    "specialists": {"type": "object", "required": ["manual"], "additionalProperties": true},
     "integrations": {"type": "object", "additionalProperties": true}
+  },
+  "$defs": {
+    "catalogRoute": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["primary", "fallback", "required"],
+      "properties": {
+        "primary": {"enum": ["manual", "altegio-snapshot", "google-sheets", "external-api"]},
+        "fallback": {"enum": ["manual", "none"]},
+        "required": {"type": "boolean"}
+      }
+    },
+    "specialistRoute": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["primary", "fallback", "required"],
+      "properties": {
+        "primary": {"enum": ["manual", "altegio-snapshot", "google-sheets", "external-api"]},
+        "fallback": {"enum": ["manual", "none"]},
+        "required": {"type": "boolean"}
+      }
+    },
+    "bookingRoute": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["primary", "fallback", "required"],
+      "properties": {
+        "primary": {"enum": ["internal", "contact", "altegio", "external-api"]},
+        "fallback": {"enum": ["contact", "none"]},
+        "required": {"type": "boolean"}
+      }
+    }
   }
 }

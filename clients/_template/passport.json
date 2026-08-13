@@ -31,6 +31,11 @@
     {"id": "main", "name": "Main", "address": "Nha Trang, Vietnam", "phone": "", "hours": "09:00–20:00", "mapUrl": "", "primary": true}
   ],
   "content": {"featuredServiceIds": [], "defaultConsultationServiceId": ""},
+  "dataSources": {
+    "catalog": {"primary": "manual", "fallback": "manual", "required": true},
+    "specialists": {"primary": "manual", "fallback": "manual", "required": true},
+    "booking": {"primary": "internal", "fallback": "contact", "required": false}
+  },
   "catalog": {
     "imports": [],
     "manualGroups": [],
@@ -38,7 +43,7 @@
   },
   "specialists": {"manual": []},
   "integrations": {
-    "booking": {"provider": "manual", "enabled": false},
+    "booking": {"provider": "internal", "enabled": false},
     "telegram": {"enabled": false, "botUsername": "", "adminChatId": ""},
     "ai": {"enabled": false, "model": "gpt-5.6", "aliases": {}},
     "cloudflare": {"workerName": "", "workerOrigin": "", "appUrl": ""}
