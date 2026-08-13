@@ -23,8 +23,12 @@ jobs:
       - name: Remove backend-only Wrangler config for Next.js autoconfig
         run: rm -f wrangler.jsonc
       - name: Deploy temporary Cloudflare Worker
-        run: npx wrangler@latest deploy --temporary --yes 2>&1 | tee cloudflare-deploy.txt
+        shell: bash
+        run: |
+          set -o pipefail
+          printf 'y\n' | npx wrangler@latest deploy --temporary 2>&1 | tee cloudflare-deploy.txt
       - name: Save deployment output
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: cloudflare-deploy-output
