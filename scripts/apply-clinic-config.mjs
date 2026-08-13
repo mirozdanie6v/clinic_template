@@ -25,7 +25,6 @@ services.forEach((group, groupIndex) => {
   if (groupIds.has(group.id)) fail(`duplicate service group id: ${group.id}`);
   groupIds.add(group.id);
   localized(group.title, `services[${groupIndex}].title`);
-  localized(group.note, `services[${groupIndex}].note`);
   if (!Array.isArray(group.items) || !group.items.length) fail(`services[${groupIndex}].items must not be empty`);
   group.items.forEach((item, itemIndex) => {
     if (!item.id) fail(`services[${groupIndex}].items[${itemIndex}].id is required`);
@@ -33,7 +32,6 @@ services.forEach((group, groupIndex) => {
     serviceIds.add(item.id);
     localized(item.name, `service ${item.id}.name`);
     localized(item.price, `service ${item.id}.price`);
-    localized(item.desc, `service ${item.id}.desc`);
   });
 });
 
