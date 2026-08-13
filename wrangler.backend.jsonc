@@ -1,0 +1,6 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "clinic-template-backend",
+  "main": "backend/worker.ts",
+  "compatibility_date": "2026-08-13"
+}
