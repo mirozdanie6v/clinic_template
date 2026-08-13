@@ -26,7 +26,8 @@ if (manifest.schemaVersion === 2 && manifest.documents) {
   buildPath = tempPath;
 }
 
-const build = spawnSync(process.execPath, [path.join(root, "scripts", "build-client-routed.mjs"), buildPath], { cwd: root, stdio: "inherit" });
+const builder = resolved.catalog?.autoDiscoverNetwork ? "build-client-exact-network.mjs" : "build-client-routed.mjs";
+const build = spawnSync(process.execPath, [path.join(root, "scripts", builder), buildPath], { cwd: root, stdio: "inherit" });
 if (build.status !== 0) { if (tempPath) fs.rmSync(tempPath, { force: true }); process.exit(build.status || 1); }
 
 const runtimePath = path.join(root, "public", "client-data.json");
@@ -41,4 +42,4 @@ if (fs.existsSync(runtimePath)) {
   fs.writeFileSync(runtimePath, JSON.stringify(runtime, null, 2) + "\n");
 }
 if (tempPath) fs.rmSync(tempPath, { force: true });
-console.log(`client-v2: built ${resolved.client?.name || passportArg}`);
+console.log(`client-v2: built ${resolved.client?.name || passportArg} via ${builder}`);
