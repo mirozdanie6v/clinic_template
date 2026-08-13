@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "client": {"slug": "manual-demo", "name": "Manual Demo", "shortName": "Demo", "businessType": "beauty-space", "city": "Nha Trang", "country": "Vietnam", "languages": ["ru", "en", "vi"], "timezone": "Asia/Ho_Chi_Minh"},
+  "brand": {"brandLine": "MANUAL DEMO", "tagline": {"ru": "Демо", "en": "Demo", "vi": "Demo"}, "images": {"hero": "/client/hero.webp"}, "theme": {}},
+  "contacts": {"phone": "+84"},
+  "locations": [{"id": "main", "name": "Main", "address": "Nha Trang, Vietnam", "hours": "09:00–20:00", "primary": true}],
+  "content": {"featuredServiceIds": ["consultation"], "defaultConsultationServiceId": "consultation"},
+  "catalog": {"imports": [], "manualGroups": [{"id": "care", "title": {"ru": "Уход", "en": "Care", "vi": "Chăm sóc"}, "note": {"ru": "", "en": "", "vi": ""}, "items": [{"id": "consultation", "name": {"ru": "Консультация", "en": "Consultation", "vi": "Tư vấn"}, "price": {"ru": "По запросу", "en": "On request", "vi": "Liên hệ"}, "desc": {"ru": "", "en": "", "vi": ""}}]}], "priceDisplay": {"multiplier": 1, "currency": "", "locale": "vi-VN"}},
+  "specialists": {"manual": [{"id": "specialist-1", "name": {"ru": "Специалист", "en": "Specialist", "vi": "Chuyên gia"}, "role": {"ru": "Специалист", "en": "Specialist", "vi": "Chuyên gia"}, "serviceGroups": ["care"]}]},
+  "integrations": {"booking": {"provider": "internal", "enabled": false}, "telegram": {"enabled": false}, "ai": {"enabled": false}, "cloudflare": {}}
+}
