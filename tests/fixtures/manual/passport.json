@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "client": {
+    "slug": "manual-fixture",
+    "name": "Manual Fixture",
+    "shortName": "Fixture",
+    "businessType": "clinic",
+    "city": "Nha Trang",
+    "country": "Vietnam",
+    "languages": ["ru", "en", "vi"],
+    "timezone": "Asia/Ho_Chi_Minh"
+  },
+  "brand": {
+    "brandLine": "MANUAL FIXTURE",
+    "tagline": {"ru": "Тест ручных данных", "en": "Manual data test", "vi": "Kiểm tra dữ liệu thủ công"},
+    "theme": {"background": "#F7F5F0", "surface": "#FFFFFF", "text": "#20211D", "muted": "#61645B", "primary": "#68783C", "primaryDark": "#4F5E2A", "accent": "#B7D36B"},
+    "images": {"hero": "/client/hero.webp", "welcome": "/client/hero.webp"}
+  },
+  "contacts": {"phone": "+84"},
+  "locations": [{"id": "main", "name": "Main", "address": "Nha Trang, Vietnam", "hours": "09:00–20:00", "primary": true}],
+  "content": {"featuredServiceIds": ["consultation"], "defaultConsultationServiceId": "consultation"},
+  "dataSources": {
+    "catalog": {"primary": "manual", "fallback": "manual", "required": true},
+    "specialists": {"primary": "manual", "fallback": "manual", "required": true},
+    "booking": {"primary": "internal", "fallback": "contact", "required": false}
+  },
+  "catalog": {
+    "imports": [],
+    "manualGroups": [{
+      "id": "general",
+      "title": {"ru": "Основное", "en": "General", "vi": "Chung"},
+      "note": {"ru": "Тест", "en": "Test", "vi": "Kiểm tra"},
+      "items": [{
+        "id": "consultation",
+        "name": {"ru": "Консультация", "en": "Consultation", "vi": "Tư vấn"},
+        "price": {"ru": "По запросу", "en": "On request", "vi": "Liên hệ"},
+        "desc": {"ru": "Тестовая услуга", "en": "Test service", "vi": "Dịch vụ kiểm tra"}
+      }]
+    }],
+    "priceDisplay": {"multiplier": 1, "currency": "", "locale": "vi-VN"}
+  },
+  "specialists": {"manual": [{
+    "id": "specialist-1",
+    "name": {"ru": "Специалист", "en": "Specialist", "vi": "Chuyên gia"},
+    "role": {"ru": "Специалист", "en": "Specialist", "vi": "Chuyên gia"},
+    "serviceGroups": ["general"]
+  }]},
+  "integrations": {
+    "booking": {"provider": "internal", "enabled": false},
+    "telegram": {"enabled": false},
+    "ai": {"enabled": false},
+    "cloudflare": {}
+  }
+}
