@@ -18,7 +18,11 @@ jobs:
           node-version: 22
       - name: Install dependencies
         run: npm install
-      - name: Verify manual client pipeline
+      - name: Verify legacy manual client pipeline
         run: npm run build:client -- tests/fixtures/manual/passport.json
+      - name: Sync EVO public booking source
+        run: npm run sync:client -- clients/evo/passport.json
+      - name: Verify EVO Passport v2 pipeline
+        run: npm run build:client -- clients/evo/passport.json
       - name: Build application
         run: npm run build
