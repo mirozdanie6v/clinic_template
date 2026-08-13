@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "clinic": {
+    "slug": "new-clinic",
+    "name": "New Clinic",
+    "shortName": "New Clinic",
+    "brandLine": "NEW CLINIC",
+    "city": "NHA TRANG",
+    "tagline": {
+      "ru": "Современная клиника в Нячанге.",
+      "en": "Modern clinic in Nha Trang.",
+      "vi": "Phòng khám hiện đại tại Nha Trang."
+    },
+    "hours": "9:00–20:00",
+    "logoSource": "clients/_template/assets/logo.png",
+    "heroImage": "/client/hero.webp",
+    "welcomeImage": "/client/hero.webp"
+  },
+  "contacts": {
+    "phone": "+84",
+    "telegram": "",
+    "website": "",
+    "address": "Nha Trang, Vietnam",
+    "mapUrl": "https://www.google.com/maps/dir/?api=1&destination=Nha+Trang+Vietnam"
+  },
+  "theme": {
+    "background": "#F7F5F0",
+    "surface": "#FFFFFF",
+    "text": "#20211D",
+    "muted": "#61645B",
+    "primary": "#68783C",
+    "primaryDark": "#4F5E2A",
+    "accent": "#B7D36B"
+  },
+  "featuredServiceIds": ["consultation", "service-1"],
+  "defaultConsultationServiceId": "consultation",
+  "services": [
+    {
+      "id": "general",
+      "title": {"ru": "Основное направление", "en": "Main direction", "vi": "Dịch vụ chính"},
+      "note": {"ru": "Краткое описание направления", "en": "Short direction description", "vi": "Mô tả ngắn"},
+      "image": "/client/services/general.webp",
+      "items": [
+        {
+          "id": "consultation",
+          "name": {"ru": "Первичная консультация", "en": "Initial consultation", "vi": "Tư vấn ban đầu"},
+          "price": {"ru": "По запросу", "en": "On request", "vi": "Liên hệ"},
+          "desc": {"ru": "Первичный приём специалиста.", "en": "Initial specialist appointment.", "vi": "Buổi tư vấn đầu tiên."},
+          "image": "/client/services/consultation.webp"
+        },
+        {
+          "id": "service-1",
+          "name": {"ru": "Услуга 1", "en": "Service 1", "vi": "Dịch vụ 1"},
+          "price": {"ru": "По запросу", "en": "On request", "vi": "Liên hệ"},
+          "desc": {"ru": "Описание услуги.", "en": "Service description.", "vi": "Mô tả dịch vụ."},
+          "image": "/client/services/service-1.webp"
+        }
+      ]
+    }
+  ],
+  "specialists": [
+    {
+      "id": "specialist-1",
+      "name": {"ru": "Имя специалиста", "en": "Specialist name", "vi": "Tên chuyên gia"},
+      "role": {"ru": "Специалист", "en": "Specialist", "vi": "Chuyên gia"},
+      "image": "/client/specialists/specialist-1.webp",
+      "tags": ["general"],
+      "serviceGroups": ["general"]
+    }
+  ],
+  "ai": {
+    "enabled": true,
+    "model": "gpt-5.6",
+    "aliases": {
+      "consultation": ["консультация", "consultation", "tư vấn"]
+    }
+  },
+  "telegram": {"enabled": true, "botUsername": "", "adminChatId": ""},
+  "cloudflare": {"workerName": "new-clinic-ai", "workerOrigin": "https://new-clinic-ai.example.workers.dev", "appUrl": "https://new-clinic.example.com"}
+}

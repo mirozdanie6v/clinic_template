@@ -1,0 +1,26 @@
+{
+  "name": "clinic-template",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "apply:clinic": "node scripts/apply-clinic-config.mjs"
+  },
+  "dependencies": {
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "latest",
+    "typescript": "^6.0.3"
+  },
+  "packageManager": "pnpm@10.15.1"
+}
