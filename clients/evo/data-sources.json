@@ -1,0 +1,5 @@
+{
+  "catalog": {"primary": "altegio-snapshot", "fallback": "manual", "required": true},
+  "specialists": {"primary": "altegio-snapshot", "fallback": "manual", "required": true},
+  "booking": {"primary": "altegio", "fallback": "contact", "required": false}
+}
