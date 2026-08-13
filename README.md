@@ -1,18 +1,34 @@
 # clinic_template
 
-Universal clinic miniapp template based on the AVE Clinic miniapp architecture.
+Universal Mini App and client-data template based on the AVE Clinic architecture.
+
+## Client passport
+
+Each client has one editable source of truth:
+
+`clients/<slug>/passport.json`
+
+The passport contains brand, contacts, locations, manual content, specialists, integrations and `dataSources` routing. External systems such as Altegio are optional providers.
 
 ## Create a client prototype
 
-1. Copy `clients/_template/` to `clients/<client-slug>/`.
-2. Fill `clients/<client-slug>/clinic.json`: brand, contacts, theme, service groups, services, specialists, AI, Telegram and Cloudflare settings.
-3. Put client images under `public/client/` and the source logo at the path declared in `logoSource`.
-4. Run:
+1. Copy `clients/_template/passport.json` to `clients/<client-slug>/passport.json`.
+2. Fill the brand passport manually or through an intake automation.
+3. If an external source exists, configure it in `passport.dataSources` and `catalog.imports`.
+4. Run any required source adapter, for example Altegio sync.
+5. Build the client:
 
 ```bash
-node scripts/apply-clinic-config.mjs clients/<client-slug>/clinic.json
+npm run build:client -- clients/<client-slug>/passport.json
 ```
 
-5. Add real secrets only as environment variables using `.env.example` as the list of required variables. Never commit bot tokens, OpenAI keys or Cloudflare API tokens.
+The build produces:
 
-The generator validates service/specialist relationships and applies client data to the existing miniapp UI, booking flow, AI knowledge base and Cloudflare/Telegram integration layer.
+- `clients/<slug>/clinic.generated.json` for the existing Mini App generator;
+- `public/client-data.json` as the shared product-neutral runtime for Mini App, Landing, AI, CRM/admin and analytics adapters.
+
+Manual catalog and specialist data remain available inside the same passport, so a client does not need Altegio or another CRM.
+
+Secrets belong only in environment variables. Never commit Telegram bot tokens, OpenAI keys, Cloudflare API tokens or other credentials.
+
+See `docs/CLIENT_PIPELINE.md` and `docs/DATA_SOURCES.md`.
