@@ -1,5 +1,0 @@
-{
-  "catalog": {"primary": "manual", "fallback": "manual", "required": true},
-  "specialists": {"primary": "manual", "fallback": "manual", "required": true},
-  "booking": {"primary": "internal", "fallback": "contact", "required": false}
-}
