@@ -1,14 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "clinic-template-backend",
-  "main": "cloudflare/clinic-worker.ts",
-  "compatibility_date": "2026-08-13",
-  "durable_objects": {
-    "bindings": [
-      { "name": "CLINIC_BOOKINGS", "class_name": "ClinicBookingStore" }
-    ]
-  },
-  "exports": {
-    "ClinicBookingStore": { "type": "durable-object", "storage": "sqlite" }
-  }
+  "main": "backend/worker.ts",
+  "compatibility_date": "2026-08-13"
 }
