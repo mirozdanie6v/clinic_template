@@ -2,17 +2,19 @@
 
 Every client uses the same normalized product contract. External systems are optional providers, not template dependencies.
 
-## Routing file
+## Single source of truth
 
-Until `dataSources` is embedded into every existing `passport.json`, the builder reads `clients/<slug>/data-sources.json`. If a passport already contains `dataSources`, that embedded block has priority.
+`clients/<slug>/passport.json` is the only client-owned configuration file. Data source routing is embedded in `passport.dataSources`; separate routing sidecars are obsolete.
 
 Example without CRM:
 
 ```json
 {
-  "catalog": {"primary": "manual", "fallback": "manual", "required": true},
-  "specialists": {"primary": "manual", "fallback": "manual", "required": true},
-  "booking": {"primary": "internal", "fallback": "contact", "required": false}
+  "dataSources": {
+    "catalog": {"primary": "manual", "fallback": "manual", "required": true},
+    "specialists": {"primary": "manual", "fallback": "manual", "required": true},
+    "booking": {"primary": "internal", "fallback": "contact", "required": false}
+  }
 }
 ```
 
@@ -20,38 +22,32 @@ Example with Altegio:
 
 ```json
 {
-  "catalog": {"primary": "altegio-snapshot", "fallback": "manual", "required": true},
-  "specialists": {"primary": "altegio-snapshot", "fallback": "manual", "required": true},
-  "booking": {"primary": "altegio", "fallback": "contact", "required": false}
+  "dataSources": {
+    "catalog": {"primary": "altegio-snapshot", "fallback": "manual", "required": true},
+    "specialists": {"primary": "altegio-snapshot", "fallback": "manual", "required": true},
+    "booking": {"primary": "altegio", "fallback": "contact", "required": false}
+  }
 }
 ```
 
 ## Supported routing values
 
-Catalog and specialists: `manual`, `altegio-snapshot`. `google-sheets` and `external-api` are reserved provider names; until their adapters are added they resolve to `manual` when fallback is `manual`.
+Catalog and specialists: `manual`, `altegio-snapshot`. `google-sheets` and `external-api` are reserved provider names for future adapters.
 
 Booking: `internal`, `contact`, `altegio`, `external-api`.
 
-## Mandatory fallback rule
+## Fallback rule
 
-Every route has a fallback. For client content the canonical safe fallback is `manual`, using `catalog.manualGroups` and `specialists.manual` from the passport. Therefore a client can be built with no external booking system at all.
+Manual data lives in the same passport under `catalog.manualGroups` and `specialists.manual`. A client can therefore build and run with no external booking or CRM system.
 
-## Builder
+## Build
 
 Run:
 
 ```bash
-node scripts/build-client-routed.mjs clients/<slug>/passport.json
+npm run build:client -- clients/<slug>/passport.json
 ```
 
-The builder:
+The builder resolves the configured providers, normalizes all data, writes `clients/<slug>/clinic.generated.json`, writes the shared `public/client-data.json`, and applies the generated config to the common Mini App.
 
-1. reads the passport;
-2. resolves `dataSources` from the passport or sidecar routing file;
-3. loads only the selected providers;
-4. falls back to manual data when an optional external provider is unavailable;
-5. produces `clients/<slug>/clinic.generated.json`;
-6. produces the shared `public/client-data.json` consumed by Mini App, Landing, AI and future adapters;
-7. applies the generated config to the common Mini App.
-
-No product component should know whether the original source was Altegio, manual input, a spreadsheet or another CRM. Products consume only normalized client data.
+CI verifies the manual-only client path on every pull request. Product components never need to know whether the source was Altegio, manual input, a spreadsheet, or another CRM.
