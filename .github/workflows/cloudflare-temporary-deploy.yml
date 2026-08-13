@@ -1,0 +1,32 @@
+name: Cloudflare temporary deploy
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/cloudflare-temporary-deploy.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install dependencies
+        run: npm install
+      - name: Remove backend-only Wrangler config for Next.js autoconfig
+        run: rm -f wrangler.jsonc
+      - name: Deploy temporary Cloudflare Worker
+        run: npx wrangler@latest deploy --temporary --yes 2>&1 | tee cloudflare-deploy.txt
+      - name: Save deployment output
+        uses: actions/upload-artifact@v4
+        with:
+          name: cloudflare-deploy-output
+          path: cloudflare-deploy.txt
+          retention-days: 1
