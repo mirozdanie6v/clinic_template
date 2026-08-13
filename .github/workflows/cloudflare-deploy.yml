@@ -1,0 +1,60 @@
+name: Deploy clinic_template to Cloudflare
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: clinic-template-cloudflare-production
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check Cloudflare credentials
+        id: cloudflare_credentials
+        shell: bash
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          if [ -n "${CLOUDFLARE_API_TOKEN:-}" ]; then
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+            echo "CLOUDFLARE_API_TOKEN is not configured; production deployment is skipped."
+          fi
+
+      - uses: pnpm/action-setup@v4
+        if: steps.cloudflare_credentials.outputs.configured == 'true'
+        with:
+          version: 10.15.1
+
+      - uses: actions/setup-node@v4
+        if: steps.cloudflare_credentials.outputs.configured == 'true'
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        if: steps.cloudflare_credentials.outputs.configured == 'true'
+        run: pnpm install
+
+      - name: Prepare Next.js Cloudflare autoconfig
+        if: steps.cloudflare_credentials.outputs.configured == 'true'
+        run: rm -f wrangler.jsonc
+
+      - name: Deploy production Worker
+        if: steps.cloudflare_credentials.outputs.configured == 'true'
+        shell: bash
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: 3972de85ae8b3d2ee3e0d35ecf7ca358
+        run: |
+          set -o pipefail
+          npx wrangler@latest deploy
