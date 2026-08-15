@@ -1,0 +1,26 @@
+{
+  "status": "ready-v1",
+  "funnel": ["app_open","location_selected","service_group_opened","service_selected","specialist_selected","booking_started","booking_handoff","booking_confirmed"],
+  "events": [
+    {"id":"app_open","properties":["language","environment"]},
+    {"id":"location_selected","properties":["locationId"]},
+    {"id":"service_group_opened","properties":["locationId","groupId"]},
+    {"id":"service_selected","properties":["locationId","serviceId","groupId"]},
+    {"id":"specialist_selected","properties":["locationId","specialistId","serviceId"]},
+    {"id":"ai_opened","properties":["language","locationId"]},
+    {"id":"ai_recommendation_selected","properties":["serviceId","locationId"]},
+    {"id":"booking_started","properties":["locationId","serviceId","specialistId","providerMode"]},
+    {"id":"booking_handoff","properties":["provider","fallbackReason"]},
+    {"id":"booking_confirmed","properties":["provider","locationId","serviceId","specialistId"]}
+  ],
+  "successMetrics": [
+    "service-selection rate from home",
+    "specialist-selection rate after service",
+    "booking-start rate after service/specialist",
+    "booking-confirmed rate when confirmation is observable",
+    "AI recommendation-to-service click rate",
+    "fallback usage rate by environment"
+  ],
+  "diagnosticQuestions": ["Where do users abandon the catalog?","Which groups create the most choice friction?","Does AI reduce service-selection abandonment?","Are specific branches generating booking friction?","Which language has higher drop-off?"],
+  "privacyNotes": ["Do not collect unnecessary sensitive beauty/medical detail in analytics.","Use pseudonymous/session-level identifiers unless explicit identity is required for a feature."]
+}
