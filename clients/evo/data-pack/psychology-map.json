@@ -1,0 +1,42 @@
+{
+  "status": "ready-v1",
+  "segments": [
+    {
+      "id": "ru-expats-tourists",
+      "priority": "high",
+      "basis": "clients/evo/data-pack/audiences.json",
+      "pains": ["uncertainty when choosing a beauty provider abroad","language friction","difficulty comparing a large service list","uncertainty about which specialist performs a chosen service"],
+      "fears": ["poor-quality result","misunderstood request","unexpected booking friction","choosing the wrong branch or specialist"],
+      "desiredOutcomes": ["clear choice","predictable service experience","easy booking","confidence before arrival"],
+      "trustTriggers": ["real specialist identity","clear branch/contact data","real portfolio evidence","exact service-to-specialist relation","professional visual consistency"],
+      "objections": ["Is this the right service for me?","Who should I book with?","Which branch?","Can I communicate comfortably?"],
+      "decisionCriteria": ["trust","service relevance","specialist confidence","convenience","clarity"]
+    },
+    {
+      "id": "international-en",
+      "priority": "high",
+      "basis": "clients/evo/data-pack/audiences.json",
+      "pains": ["finding a reliable international-friendly salon","unclear local-language booking flows","too much undifferentiated service choice"],
+      "fears": ["communication mismatch","quality inconsistency","unclear location or booking process"],
+      "desiredOutcomes": ["internationally understandable experience","fast selection","visible proof","simple booking"],
+      "trustTriggers": ["English content","clean premium presentation","specialist profiles","real evidence","clear booking path"],
+      "objections": ["Will they understand what I want?","Is the service appropriate?","How do I book?"],
+      "decisionCriteria": ["clarity","quality perception","proof","convenience"]
+    },
+    {
+      "id": "local-vn",
+      "priority": "medium",
+      "basis": "clients/evo/data-pack/audiences.json",
+      "pains": ["large catalog navigation","comparison between branches and specialists"],
+      "fears": ["wrong selection","unclear service fit"],
+      "desiredOutcomes": ["quick local-language navigation","clear specialist choice","easy booking"],
+      "trustTriggers": ["Vietnamese content","location clarity","specialist identity","visual quality"],
+      "objections": ["Which location is convenient?","Which specialist provides this service?"],
+      "decisionCriteria": ["fit","location","trust","convenience"]
+    }
+  ],
+  "globalTrustTriggers": ["clarity","professional consistency","real specialist identity","real proof where proof is claimed","transparent branch and booking context"],
+  "globalObjections": ["choice overload","unclear service fit","wrong specialist","wrong branch","communication uncertainty","booking friction"],
+  "decisionCriteria": ["trust","relevance","proof","clarity","convenience"],
+  "desiredEmotionalResponse": ["calm confidence","being understood","controlled choice","premium care without intimidation"]
+}
