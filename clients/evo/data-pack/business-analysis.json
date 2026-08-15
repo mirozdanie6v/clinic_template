@@ -1,0 +1,32 @@
+{
+  "status": "ready-v1",
+  "facts": [
+    {"id":"network","statement":"EVO operates a multi-location beauty network with CENTER, NORTH and SAIGON locations.","source":"clients/evo/data-pack/locations.json"},
+    {"id":"breadth","statement":"The normalized network contains 512 branch service records, 30 staff records and 813 exact service-to-staff relations.","source":"clients/evo/data-pack/data-quality.json"},
+    {"id":"languages","statement":"The client product is configured for RU, EN and VI.","source":"clients/evo/passport.json"},
+    {"id":"booking","statement":"Online booking uses Altegio with an official-form fallback.","source":"clients/evo/data-pack/integrations.json"},
+    {"id":"brand","statement":"Recognizable brand anchors are the EVO wordmark, olive/deep-olive family, warm cream and restrained bronze accent.","source":"clients/evo/data-pack/visual-direction.json"}
+  ],
+  "inferences": [
+    {"id":"choice-load","statement":"The breadth of services can create choice overload, so navigation should guide by goal/category and preserve context."},
+    {"id":"location-friction","statement":"A multi-location network increases the risk of choosing the wrong branch, so branch state should persist through catalog, specialist and booking flows."},
+    {"id":"trust-sensitive","statement":"Beauty purchasing is strongly affected by perceived expertise, hygiene/safety, visual quality, specialist confidence and proof."}
+  ],
+  "hypotheses": [
+    {"id":"guided-conversion","statement":"Goal-led navigation and AI-assisted selection may reduce abandonment before booking.","validation":"analytics funnel"},
+    {"id":"visual-coherence","statement":"A coherent premium visual campaign may increase perceived quality and trust versus inconsistent source-feed imagery.","validation":"engagement and booking funnel comparison"}
+  ],
+  "objectives": [
+    "Make a large catalog understandable in a few taps.",
+    "Keep branch, service and specialist context exact through booking.",
+    "Raise perceived brand coherence and premium quality.",
+    "Reduce uncertainty before the booking handoff.",
+    "Support Russian-speaking, English-speaking and Vietnamese users consistently."
+  ],
+  "marketContext": {"category":"multi-service beauty space","geography":"Vietnam","primaryProductContext":"mobile-first booking and discovery"},
+  "competitiveContext": [],
+  "strengths": ["broad service catalog","multiple locations","online booking infrastructure","recognizable olive/cream brand anchors"],
+  "weaknesses": ["large catalog can be cognitively heavy","public visual sources are not one consistent design system","review text coverage is incomplete"],
+  "opportunities": ["guided discovery","stronger visual coherence","cross-service journeys","branch-aware personalization","AI-assisted service selection"],
+  "commercialPriorities": ["service discovery","specialist confidence","booking completion","repeat contact and future CRM continuity"]
+}
