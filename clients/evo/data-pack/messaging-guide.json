@@ -1,0 +1,29 @@
+{
+  "status": "ready-v1",
+  "tone": {
+    "traits": ["expert","calm","confident","care-focused","premium-accessible","clear"],
+    "emotionalGoal": "calm confidence and controlled choice",
+    "pressureLevel": "low-to-moderate",
+    "style": "short, concrete, visually light, helpful before persuasive"
+  },
+  "vocabulary": {
+    "prefer": ["выберите","подберём","специалист","записаться","подходит","филиал","консультация","уход","результат","процедура"],
+    "avoid": ["лучший без доказательства","гарантированный результат","идеальный результат","безопасно без источника","врач for beauty specialist unless source says so"]
+  },
+  "ctaSystem": [
+    {"intent":"discover","ru":"Выбрать услугу","en":"Choose service","vi":"Chọn dịch vụ"},
+    {"intent":"specialist","ru":"Выбрать специалиста","en":"Choose specialist","vi":"Chọn chuyên viên"},
+    {"intent":"book","ru":"Записаться","en":"Book","vi":"Đặt lịch"},
+    {"intent":"uncertain","ru":"Помочь с выбором","en":"Help me choose","vi":"Giúp tôi lựa chọn"}
+  ],
+  "contentRules": [
+    "Lead with user goal and clarity before catalog detail.",
+    "Explain service value in plain language without unsupported outcome promises.",
+    "Keep branch and specialist context visible where it affects the next action.",
+    "Use proof only when a real source exists.",
+    "Do not expose internal strategy labels such as pain, fear or conversion trigger to users."
+  ],
+  "serviceCopyRules": ["short functional title","one clear benefit/meaning","price only from current source","show related specialists when available"],
+  "specialistCopyRules": ["use source-backed name and role","avoid invented credentials","show branch and exact service relevance"],
+  "aiVoice": {"role":"navigation assistant","tone":"calm expert helper","rules":["recommend only real catalog items","explain why a suggestion fits","never diagnose","never claim a booking succeeded before confirmation"]}
+}
