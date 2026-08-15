@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import crypto from "node:crypto";
+import { materializeGeneratedAssets } from "./lib/materialize-generated-assets.mjs";
 
 const root = process.cwd();
 const args = process.argv.slice(2);
@@ -15,12 +16,20 @@ const fail = (message) => {
 
 if (!fs.existsSync(manifestPath)) fail(`passport not found: ${passportArg}`);
 const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
+const clientDir = path.dirname(manifestPath);
+
+try {
+  const materialized = materializeGeneratedAssets(clientDir);
+  if (materialized.count) console.log(`visual-gate: materialized ${materialized.count} generated visual assets`);
+} catch (error) {
+  fail(error instanceof Error ? error.message : String(error));
+}
 
 function loadDocument(key) {
   const relative = manifest?.documents?.[key];
   if (!relative) return null;
   if (typeof relative !== "string" || path.isAbsolute(relative) || relative.includes("..")) fail(`invalid document path: ${key}`);
-  const docPath = path.resolve(path.dirname(manifestPath), relative);
+  const docPath = path.resolve(clientDir, relative);
   if (!fs.existsSync(docPath)) fail(`missing ${key}: ${relative}`);
   return JSON.parse(fs.readFileSync(docPath, "utf8"));
 }
