@@ -1,0 +1,36 @@
+{
+  "contractVersion": 1,
+  "stage": "0.3-product-capability-contract",
+  "releaseGates": {
+    "productQa": true,
+    "runtimeAcceptance": true,
+    "postDeploySmoke": true
+  },
+  "viewports": [320, 360, 390, 430, 768],
+  "environments": ["android-chrome", "iphone-safari", "telegram-android", "telegram-iphone", "desktop-smoke"],
+  "languages": ["ru", "en", "vi"],
+  "journeys": ["home", "branch-switch", "services", "service-to-specialist", "specialist-to-service", "booking-altegio", "ai", "profile"],
+  "scale": {
+    "locations": 3,
+    "serviceRecords": 512,
+    "staffRecords": 30,
+    "exactRelations": 813
+  },
+  "capabilityStates": [
+    {"capability":"booking","provider":"altegio","directApi":"credential-dependent","fallback":"official-altegio-form"},
+    {"capability":"ai","visible":true,"enabled":false,"fallback":"local-catalog-assistant"},
+    {"capability":"telegram","mode":"session-api-basic"}
+  ],
+  "acceptedExceptions": [
+    {"id":"altegio-partner-token","reason":"Partner token is not configured; official Altegio booking fallback is mandatory until credential activation."}
+  ],
+  "regressions": [
+    "ios-input-auto-zoom",
+    "controlled-input-remount-focus-loss",
+    "iphone-caret-reversal",
+    "keyboard-form-collision",
+    "altegio-cta-booking-actions-overlap",
+    "bottom-nav-keyboard-collision",
+    "ai-visible-vs-enabled-state"
+  ]
+}

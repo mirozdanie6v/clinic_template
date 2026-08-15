@@ -18,7 +18,9 @@ jobs:
           node-version: 22
       - run: npm install
       - run: npm run build:client -- tests/fixtures/manual/passport.json
+      - run: npm run validate:product
       - run: npm run validate:visual -- clients/evo/passport.json
       - run: npm run validate:visual -- clients/evo/passport.json --final
       - run: npm run build:client -- clients/evo/passport.json
+      - run: npm run validate:product -- clients/evo/passport.json
       - run: npm run build

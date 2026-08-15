@@ -5,6 +5,7 @@ import "./production-v2.css";
 import "./client-theme.generated.css";
 import "./capability-visibility.css";
 import "./mobile-input-stability.css";
+import "./product-quality.css";
 
 export const metadata: Metadata = {
   title: "Clinic Mini App",

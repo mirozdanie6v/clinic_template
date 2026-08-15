@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "name": "Mini App Product Quality Rules",
+  "releasePolicy": {
+    "maxP0": 0,
+    "maxP1": 0,
+    "p2RequiresException": true
+  },
+  "blockingChecks": [
+    {
+      "id": "viewport-safe-area",
+      "file": "app/layout.tsx",
+      "includesAll": ["viewportFit: \"cover\""]
+    },
+    {
+      "id": "mobile-input-font-size",
+      "file": "app/mobile-input-stability.css",
+      "includesAll": ["font-size: 16px !important", "min-height: 52px"]
+    },
+    {
+      "id": "keyboard-bottom-nav-collision",
+      "file": "app/mobile-input-stability.css",
+      "includesAll": ["body:has(input:focus) .bottom-nav", "visibility: hidden"]
+    },
+    {
+      "id": "booking-actions-mobile-flow",
+      "file": "app/mobile-input-stability.css",
+      "includesAll": [".booking-actions", "position: static !important"]
+    },
+    {
+      "id": "stable-controlled-form-screens",
+      "file": "scripts/apply-final-visual-ui.mjs",
+      "includesAll": ["stableScreens", "source.replaceAll(jsx, call)"]
+    },
+    {
+      "id": "product-quality-css-loaded",
+      "file": "app/layout.tsx",
+      "includesAll": ["./product-quality.css"]
+    },
+    {
+      "id": "vertical-content-reachable",
+      "file": "app/product-quality.css",
+      "includesAll": ["overflow-x: hidden", "overflow-y: visible"]
+    },
+    {
+      "id": "minimum-touch-target",
+      "file": "app/product-quality.css",
+      "includesAll": ["min-height: 44px"]
+    },
+    {
+      "id": "mobile-readability-layer",
+      "file": "app/product-quality.css",
+      "includesAll": ["font-size: 10px", "font-size: 11px", "font-size: 12px"]
+    },
+    {
+      "id": "quality-contract-present",
+      "file": "docs/miniapp-product-quality-contract.md",
+      "includesAll": ["3.4 — Product QA & UX Hardening", "4.1 — Runtime Acceptance", "Regression catalogue"]
+    }
+  ],
+  "manualGates": [
+    "320/360/390/430 mobile viewport matrix",
+    "Android Chrome",
+    "iPhone Safari",
+    "Telegram WebView Android",
+    "Telegram WebView iPhone",
+    "RU/EN/VI long-content stress",
+    "loading/empty/error/success states",
+    "booking direct/fallback/error",
+    "capability combinations",
+    "post-deploy critical journey"
+  ]
+}

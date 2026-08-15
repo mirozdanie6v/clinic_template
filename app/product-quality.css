@@ -1,0 +1,101 @@
+/* Universal Mini App product-quality layer.
+   This file contains release-grade geometry/readability guards shared by clients. */
+
+@media (max-width: 699px) {
+  /* Main content must remain vertically reachable. */
+  .app-shell {
+    overflow-x: hidden;
+    overflow-y: visible;
+  }
+
+  /* Final booking controls stay in document flow and cannot cover provider CTAs. */
+  .booking-actions {
+    position: static !important;
+    bottom: auto !important;
+    padding: 16px 0 0 !important;
+    background: transparent !important;
+  }
+
+  /* Minimum mobile touch target for compact utility actions. */
+  .back-button,
+  .branch-summary a,
+  .inline-cta,
+  .specialist-copy button,
+  .section-title button,
+  .text-button {
+    min-height: 44px;
+  }
+
+  .back-button,
+  .branch-summary a {
+    min-width: 44px;
+  }
+
+  .bottom-nav button {
+    min-height: 58px;
+  }
+
+  /* Readability floor for small editorial labels. */
+  .brand-copy small,
+  .language-switch button,
+  .location-panel-title span,
+  .location-pills small,
+  .branch-summary small,
+  .page-heading span,
+  .why-section .eyebrow,
+  .step-label span,
+  .choice-group-title,
+  .live-badge,
+  .bottom-nav button {
+    font-size: 10px;
+  }
+
+  .location-panel-title b,
+  .location-pills strong,
+  .branch-summary span,
+  .section-title button,
+  .text-button,
+  .service-card-footer span,
+  .group-header small,
+  .group-items small,
+  .group-items strong,
+  .choice-copy small,
+  .exact-note,
+  .specialist-copy button,
+  .inline-cta {
+    font-size: 11px;
+  }
+
+  .service-card p,
+  .lead-text,
+  .specialist-copy p,
+  .live-booking-card p,
+  .message,
+  .branch-summary b {
+    font-size: 12px;
+  }
+
+  /* Provider cards and long translated strings must remain readable/reachable. */
+  .live-booking-card,
+  .review-card,
+  .choice-button,
+  .service-card-body,
+  .specialist-copy,
+  .message {
+    overflow-wrap: anywhere;
+  }
+
+  .live-booking-card .primary-button,
+  .live-booking-card .secondary-button {
+    width: 100%;
+  }
+
+  /* Better tap behaviour without introducing transformed hit areas. */
+  button,
+  a,
+  input,
+  textarea,
+  select {
+    touch-action: manipulation;
+  }
+}
