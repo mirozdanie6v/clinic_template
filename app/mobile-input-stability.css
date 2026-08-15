@@ -28,6 +28,16 @@ html {
     text-align: start;
   }
 
+  /* Booking controls must occupy normal document flow on phones.
+     Sticky controls were covering the final Altegio card and its CTA buttons. */
+  .booking-actions {
+    position: static !important;
+    inset: auto !important;
+    margin-top: 16px;
+    padding: 0 0 8px;
+    background: transparent !important;
+  }
+
   /* Keep persistent navigation from riding above the software keyboard. */
   body:has(input:focus) .bottom-nav,
   body:has(textarea:focus) .bottom-nav {
