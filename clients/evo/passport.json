@@ -19,8 +19,8 @@
     "offers":"data-pack/offers.json",
     "seo":"data-pack/seo.json",
     "assets":"data-pack/assets.json",
-    "visualDirection":"data-pack/visual-direction.json",
-    "assetAudit":"data-pack/asset-audit.json",
+    "visualDirection":"data-pack/visual-direction-v2.json",
+    "assetAudit":"data-pack/asset-audit-v2.json",
     "integrations":"data-pack/integrations.json",
     "provenance":"data-pack/provenance.json",
     "dataQuality":"data-pack/data-quality.json",
@@ -34,7 +34,7 @@
     "brandDiagnosis":"data-pack/brand-diagnosis.json",
     "idealVisualStructure":"data-pack/ideal-visual-structure.json",
     "designSystemContract":"data-pack/design-system-contract.json",
-    "imageProductionPlan":"data-pack/image-production-plan.json",
+    "imageProductionPlan":"data-pack/image-production-plan-v2.json",
     "analyticsPlan":"data-pack/analytics-plan.json",
     "learningLoop":"data-pack/learning-loop.json"
   }
