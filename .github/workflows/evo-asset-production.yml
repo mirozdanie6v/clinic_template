@@ -1,0 +1,40 @@
+name: EVO asset production
+
+on:
+  push:
+    branches: [assets/evo-production]
+    paths:
+      - scripts/produce-evo-assets.py
+      - clients/evo/data-pack/assets.json
+      - clients/evo/data/**/staff.json
+      - .github/workflows/evo-asset-production.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  produce:
+    if: ${{ !contains(github.event.head_commit.message || '', '[asset-bot]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: assets/evo-production
+      - name: Install image tooling
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y imagemagick fonts-dejavu-core
+      - name: Produce EVO visual assets
+        run: python3 scripts/produce-evo-assets.py
+      - name: Commit produced assets
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add clients/evo/assets/visual
+          if git diff --cached --quiet; then
+            echo "No visual asset changes."
+            exit 0
+          fi
+          git commit -m "[asset-bot] Produce EVO visual assets"
+          git push origin HEAD:assets/evo-production
