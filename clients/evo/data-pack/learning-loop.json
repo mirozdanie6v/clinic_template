@@ -1,0 +1,16 @@
+{
+  "status": "active-v1",
+  "defectRule": "Every EVO defect is traced to the earliest responsible stage, fixed in the reusable clinic_template layer when applicable and added to regression coverage.",
+  "successRule": "Every repeatedly successful EVO pattern is evaluated for promotion into a reusable capability, component, strategy rule or asset-production rule.",
+  "regressionPolicy": {
+    "p0p1MustBlockRelease": true,
+    "productionDefectRequiresRegression": true,
+    "clientSpecificExceptionsMustBeDocumented": true
+  },
+  "learnings": [
+    {"id":"input-remount","source":"EVO runtime","lesson":"Controlled input screens must keep stable React identity across keystrokes.","promotedTo":"product-quality regression"},
+    {"id":"booking-action-overlap","source":"EVO runtime","lesson":"Mobile booking controls must remain in normal flow when sticky actions can cover provider CTAs.","promotedTo":"product-quality regression"},
+    {"id":"ai-visible-enabled","source":"EVO assembly","lesson":"UI visibility and external provider availability are separate capability states.","promotedTo":"capability contract"},
+    {"id":"service-image-uniqueness","source":"strategy revision","lesson":"Every service group requires a unique semantic primary image within one campaign art direction.","promotedTo":"image production validator"}
+  ]
+}

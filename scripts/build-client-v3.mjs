@@ -69,6 +69,22 @@ if (fs.existsSync(runtimePath)) {
   runtime.documentManifest = manifest.documents || null;
   fs.writeFileSync(runtimePath, JSON.stringify(runtime, null, 2) + "\n");
 }
+
+// Public/build-safe strategy profile. Internal business and psychology analysis
+// stays in the Client Passport data-pack and is deliberately not emitted.
+const strategyProfile = {
+  version: 1,
+  client: resolved.client || null,
+  productStrategy: resolved.productStrategy || null,
+  messagingGuide: resolved.messagingGuide || null,
+  idealVisualStructure: resolved.idealVisualStructure || null,
+  designSystemContract: resolved.designSystemContract || null,
+  imageProductionPlan: resolved.imageProductionPlan || null,
+  analyticsPlan: resolved.analyticsPlan || null,
+};
+fs.writeFileSync(path.join(root, "public", "client-strategy.json"), JSON.stringify(strategyProfile, null, 2) + "\n");
+
 if (tempPath) fs.rmSync(tempPath, { force: true });
 console.log(`client-v3: built ${resolved.client?.name || passportArg} via ${builder}`);
 console.log(`client-v3: theme ${cssValue("primaryDark")} / ${cssValue("background")}, portfolio=${portfolioPaths.length}, ai=${aiVisible ? "visible" : "hidden"}/${aiEnabled ? "enabled" : "disabled"}`);
+console.log(`client-v3: strategy profile emitted=${Boolean(resolved.productStrategy && resolved.messagingGuide && resolved.idealVisualStructure)}`);

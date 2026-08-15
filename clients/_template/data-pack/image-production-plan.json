@@ -1,0 +1,19 @@
+{
+  "status": "template",
+  "globalDirection": {
+    "palette": [],
+    "lighting": [],
+    "cameraLanguage": [],
+    "retouching": [],
+    "consistencyRule": "All assets must look like one coherent campaign."
+  },
+  "assets": [],
+  "rules": {
+    "uniquePrimaryImagePerServiceGroup": true,
+    "semanticMatchRequired": true,
+    "samePrimaryImageAcrossGroupsAllowed": false,
+    "generatedPeopleMayImpersonateRealSpecialists": false,
+    "generatedResultsMayBePresentedAsEvidence": false,
+    "generatedBranchInteriorsMayBePresentedAsDocumentary": false
+  }
+}

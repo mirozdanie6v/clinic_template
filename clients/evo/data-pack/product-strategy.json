@@ -1,0 +1,38 @@
+{
+  "status": "ready-v1",
+  "jobsToBeDone": [
+    "Understand what EVO offers without reading an unstructured catalog.",
+    "Choose the correct branch, service and specialist with confidence.",
+    "Book with minimal friction.",
+    "Get help choosing when the user does not know the exact service name.",
+    "Return later with profile and appointment context when those capabilities are enabled."
+  ],
+  "primaryJourneys": [
+    {"id":"goal-to-booking","steps":["home","choose-location","choose-service-group","choose-service","choose-related-specialist","booking"]},
+    {"id":"specialist-first","steps":["home","specialists","choose-specialist","view-related-services","booking"]},
+    {"id":"unsure-ai","steps":["home","ai","recommend-real-service","continue-with-service-context","booking"]},
+    {"id":"fallback-booking","steps":["booking","provider-unavailable","official-altegio-form"]}
+  ],
+  "capabilities": [
+    {"id":"locations","priority":"P0"},
+    {"id":"catalog","priority":"P0"},
+    {"id":"exact-service-specialist-relations","priority":"P0"},
+    {"id":"booking","priority":"P0"},
+    {"id":"ai-guidance","priority":"P1","visible":true,"externalBackendEnabled":false},
+    {"id":"profile-lifecycle","priority":"P1","status":"parity-backlog"},
+    {"id":"appointment-lifecycle","priority":"P1","status":"parity-backlog"},
+    {"id":"telegram-identity","priority":"P1","status":"parity-backlog"},
+    {"id":"admin-crm","priority":"P1","status":"parity-backlog"}
+  ],
+  "screenArchitecture": ["home","services","service-detail","specialists","specialist-detail","booking","ai","profile"],
+  "conversionPaths": [
+    {"from":"home","to":"booking","via":["service","specialist"]},
+    {"from":"ai","to":"booking","via":["recommended-service"]},
+    {"from":"specialist","to":"booking","via":["related-service"]}
+  ],
+  "fallbacks": [
+    {"capability":"booking","condition":"direct Altegio API unavailable","fallback":"official Altegio form"},
+    {"capability":"ai","condition":"external AI backend disabled","fallback":"local catalog guidance"},
+    {"capability":"telegram","condition":"normal browser or Telegram disabled","fallback":"normal web session"}
+  ]
+}

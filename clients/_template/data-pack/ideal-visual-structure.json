@@ -1,0 +1,18 @@
+{
+  "status": "template",
+  "artDirection": {},
+  "paletteLogic": {},
+  "typographyMood": {},
+  "imageSystem": {
+    "globalLook": [],
+    "lighting": [],
+    "composition": [],
+    "backgrounds": [],
+    "peoplePolicy": []
+  },
+  "serviceGroupRules": [],
+  "heroRules": {},
+  "specialistRules": {},
+  "portfolioRules": {},
+  "forbiddenPatterns": []
+}

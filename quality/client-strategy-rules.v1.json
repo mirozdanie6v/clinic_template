@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "requiredDocuments": [
+    "businessAnalysis",
+    "psychologyMap",
+    "offerArchitecture",
+    "trustArchitecture",
+    "productStrategy",
+    "messagingGuide",
+    "brandDiagnosis",
+    "idealVisualStructure",
+    "designSystemContract",
+    "imageProductionPlan",
+    "analyticsPlan",
+    "learningLoop"
+  ],
+  "requiredTopLevelKeys": {
+    "businessAnalysis": ["status", "facts", "inferences", "hypotheses", "objectives"],
+    "psychologyMap": ["status", "segments", "globalTrustTriggers", "globalObjections"],
+    "offerArchitecture": ["status", "entryOffers", "strategicOffers", "nextBestActions"],
+    "trustArchitecture": ["status", "proofRequirements", "journeyPlacement"],
+    "productStrategy": ["status", "jobsToBeDone", "primaryJourneys", "capabilities"],
+    "messagingGuide": ["status", "tone", "vocabulary", "ctaSystem", "contentRules"],
+    "brandDiagnosis": ["status", "preserve", "improve", "avoid", "targetPerception"],
+    "idealVisualStructure": ["status", "artDirection", "paletteLogic", "imageSystem", "serviceGroupRules"],
+    "designSystemContract": ["status", "spacing", "typography", "controls", "containers", "responsive"],
+    "imageProductionPlan": ["status", "globalDirection", "assets"],
+    "analyticsPlan": ["status", "funnel", "events", "successMetrics"],
+    "learningLoop": ["status", "defectRule", "successRule", "regressionPolicy"]
+  },
+  "imageRules": {
+    "requireUniquePrimaryAssetPerServiceGroup": true,
+    "requireSemanticIntent": true,
+    "requireArtDirection": true
+  }
+}

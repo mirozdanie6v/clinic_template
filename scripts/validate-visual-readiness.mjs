@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import crypto from "node:crypto";
 
 const root = process.cwd();
 const args = process.argv.slice(2);
@@ -31,6 +32,10 @@ function productionFileCount(directory) {
     if (entry.isDirectory()) return count + productionFileCount(full);
     return count + (/\.(webp|png|jpe?g|avif|svg)$/i.test(entry.name) ? 1 : 0);
   }, 0);
+}
+
+function sha256(file) {
+  return crypto.createHash("sha256").update(fs.readFileSync(file)).digest("hex");
 }
 
 const visual = loadDocument("visualDirection");
@@ -68,10 +73,18 @@ if (finalMode) {
   const pending = audit.productionQueue.filter((item) => item.readiness !== "ready");
   if (pending.length) fail(`asset production has ${pending.length} pending output(s): ${pending.slice(0, 5).map((item) => item.id).join(", ")}${pending.length > 5 ? "…" : ""}`);
 
+  const serviceCoverHashes = new Map();
   for (const item of audit.productionQueue) {
     if (item.output) {
       const outputPath = path.resolve(root, item.output);
       if (!fs.existsSync(outputPath) || !fs.statSync(outputPath).isFile()) fail(`missing produced asset for ${item.id}: ${item.output}`);
+
+      if (["service-family-cover", "service-group-cover"].includes(item.role)) {
+        const hash = sha256(outputPath);
+        const prior = serviceCoverHashes.get(hash);
+        if (prior) fail(`duplicate service cover image detected: ${prior.id} (${prior.category || "unknown"}) and ${item.id} (${item.category || "unknown"})`);
+        serviceCoverHashes.set(hash, { id: item.id, category: item.category || null });
+      }
     }
     if (item.outputDirectory) {
       const outputDir = path.resolve(root, item.outputDirectory);

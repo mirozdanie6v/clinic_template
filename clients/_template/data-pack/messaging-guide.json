@@ -1,0 +1,13 @@
+{
+  "status": "template",
+  "tone": {},
+  "vocabulary": {
+    "prefer": [],
+    "avoid": []
+  },
+  "ctaSystem": [],
+  "contentRules": [],
+  "serviceCopyRules": [],
+  "specialistCopyRules": [],
+  "aiVoice": {}
+}
