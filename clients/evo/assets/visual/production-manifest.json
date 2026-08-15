@@ -1,0 +1,375 @@
+{
+  "version": 1,
+  "artDirection": "EVO Quiet Premium",
+  "generatedAt": "fb37e447134c6841060ebe86d2180482b20b4358",
+  "policy": "Real EVO source imagery is preferred. Generated human identities and generated treatment outcomes are prohibited.",
+  "counts": {
+    "hero": 1,
+    "serviceFamilyCovers": 11,
+    "portfolio": 5,
+    "specialistRecords": 30,
+    "specialistPlaceholders": 4,
+    "totalOutputs": 47
+  },
+  "outputs": [
+    {
+      "id": "evo-hero-master",
+      "role": "hero",
+      "source": "official-home-hero",
+      "path": "clients/evo/assets/visual/hero-master.webp",
+      "mode": "EDIT"
+    },
+    {
+      "id": "cover-official-cosmetology-category",
+      "role": "service-family-cover",
+      "source": "official-cosmetology-category",
+      "path": "clients/evo/assets/visual/service-cosmetology.webp",
+      "mode": "EDIT"
+    },
+    {
+      "id": "cover-official-hair-category",
+      "role": "service-family-cover",
+      "source": "official-hair-category",
+      "path": "clients/evo/assets/visual/service-hair.webp",
+      "mode": "EDIT"
+    },
+    {
+      "id": "cover-official-laser-category",
+      "role": "service-family-cover",
+      "source": "official-laser-category",
+      "path": "clients/evo/assets/visual/service-laser.webp",
+      "mode": "EDIT"
+    },
+    {
+      "id": "cover-official-manicure-category",
+      "role": "service-family-cover",
+      "source": "official-manicure-category",
+      "path": "clients/evo/assets/visual/service-manicure.webp",
+      "mode": "EDIT"
+    },
+    {
+      "id": "cover-official-pedicure-category",
+      "role": "service-family-cover",
+      "source": "official-pedicure-category",
+      "path": "clients/evo/assets/visual/service-pedicure.webp",
+      "mode": "EDIT"
+    },
+    {
+      "id": "cover-official-podology-category",
+      "role": "service-family-cover",
+      "source": "official-podology-category",
+      "path": "clients/evo/assets/visual/service-podology.webp",
+      "mode": "EDIT"
+    },
+    {
+      "id": "cover-official-pmu-category",
+      "role": "service-family-cover",
+      "source": "official-pmu-category",
+      "path": "clients/evo/assets/visual/service-pmu.webp",
+      "mode": "EDIT"
+    },
+    {
+      "id": "cover-official-brows-category",
+      "role": "service-family-cover",
+      "source": "official-brows-category",
+      "path": "clients/evo/assets/visual/service-brows-lashes.webp",
+      "mode": "EDIT"
+    },
+    {
+      "id": "cover-official-tattoo-category",
+      "role": "service-family-cover",
+      "source": "official-tattoo-category",
+      "path": "clients/evo/assets/visual/service-tattoo.webp",
+      "mode": "EDIT"
+    },
+    {
+      "id": "cover-official-tattoo-removal-category",
+      "role": "service-family-cover",
+      "source": "official-tattoo-removal-category",
+      "path": "clients/evo/assets/visual/service-tattoo-removal.webp",
+      "mode": "EDIT"
+    },
+    {
+      "id": "cover-official-gift-category",
+      "role": "service-family-cover",
+      "source": "official-gift-category",
+      "path": "clients/evo/assets/visual/service-gift.webp",
+      "mode": "EDIT"
+    },
+    {
+      "id": "portfolio-official-manicure-01",
+      "role": "portfolio",
+      "source": "official-manicure-01",
+      "path": "clients/evo/assets/visual/portfolio/manicure-01.webp",
+      "mode": "EDIT"
+    },
+    {
+      "id": "portfolio-official-manicure-02",
+      "role": "portfolio",
+      "source": "official-manicure-02",
+      "path": "clients/evo/assets/visual/portfolio/manicure-02.webp",
+      "mode": "EDIT"
+    },
+    {
+      "id": "portfolio-official-laser-01",
+      "role": "portfolio",
+      "source": "official-laser-01",
+      "path": "clients/evo/assets/visual/portfolio/laser-01.webp",
+      "mode": "EDIT"
+    },
+    {
+      "id": "portfolio-official-cosmetology-01",
+      "role": "portfolio",
+      "source": "official-cosmetology-01",
+      "path": "clients/evo/assets/visual/portfolio/cosmetology-01.webp",
+      "mode": "EDIT"
+    },
+    {
+      "id": "portfolio-official-tattoo-removal-01",
+      "role": "portfolio",
+      "source": "official-tattoo-removal-01",
+      "path": "clients/evo/assets/visual/portfolio/tattoo-removal-01.webp",
+      "mode": "EDIT"
+    },
+    {
+      "id": "specialist-north-3040313",
+      "role": "specialist-portrait",
+      "source": "https://assets.alteg.io/masters/origin/2/26/26cf099c4432f6b_20260723125456.png",
+      "path": "clients/evo/assets/visual/specialists/north-3040313.webp",
+      "mode": "EDIT",
+      "name": "Rafael Vanesyan"
+    },
+    {
+      "id": "specialist-north-3034741",
+      "role": "specialist-portrait",
+      "source": "https://assets.alteg.io/masters/origin/0/0a/0a68ce5c54b1956_20260529110002.png",
+      "path": "clients/evo/assets/visual/specialists/north-3034741.webp",
+      "mode": "EDIT",
+      "name": "Анастасия Прохорова"
+    },
+    {
+      "id": "specialist-north-3024562",
+      "role": "specialist-portrait",
+      "source": "https://assets.alteg.io/masters/origin/6/61/61d34684fe470c6_20260723140335.png",
+      "path": "clients/evo/assets/visual/specialists/north-3024562.webp",
+      "mode": "EDIT",
+      "name": "Юлия Шакерова"
+    },
+    {
+      "id": "specialist-north-3007404",
+      "role": "specialist-portrait",
+      "source": "https://assets.alteg.io/masters/origin/0/08/087c83af1bfa662_20260723135801.png",
+      "path": "clients/evo/assets/visual/specialists/north-3007404.webp",
+      "mode": "EDIT",
+      "name": "Olga Benke"
+    },
+    {
+      "id": "specialist-north-3005950",
+      "role": "specialist-portrait",
+      "source": "https://assets.alteg.io/masters/origin/c/c1/c129fedac5e391c_20260325121235.png",
+      "path": "clients/evo/assets/visual/specialists/north-3005950.webp",
+      "mode": "EDIT",
+      "name": "Анастасия Урасинова"
+    },
+    {
+      "id": "specialist-north-2994884",
+      "role": "specialist-portrait",
+      "source": "https://assets.alteg.io/masters/origin/5/50/505e8e9e634fb08_20260304141245.png",
+      "path": "clients/evo/assets/visual/specialists/north-2994884.webp",
+      "mode": "EDIT",
+      "name": "Татьяна Архипенко"
+    },
+    {
+      "id": "specialist-north-2942760",
+      "role": "specialist-portrait",
+      "source": "https://assets.alteg.io/masters/origin/a/ae/ae857f58cededbb_20260105183257.png",
+      "path": "clients/evo/assets/visual/specialists/north-2942760.webp",
+      "mode": "EDIT",
+      "name": "Софья Филатова"
+    },
+    {
+      "id": "specialist-north-2861718",
+      "role": "specialist-portrait",
+      "source": "https://assets.alteg.io/masters/origin/0/0c/0c7cc536a76cea5_20250705092129.png",
+      "path": "clients/evo/assets/visual/specialists/north-2861718.webp",
+      "mode": "EDIT",
+      "name": "Лидия Цибина"
+    },
+    {
+      "id": "specialist-north-2849662",
+      "role": "specialist-portrait",
+      "source": "https://assets.alteg.io/masters/origin/d/dc/dcd6f775cdd4eb8_20250615130657.png",
+      "path": "clients/evo/assets/visual/specialists/north-2849662.webp",
+      "mode": "EDIT",
+      "name": "Веста Шатилова"
+    },
+    {
+      "id": "specialist-north-2830441",
+      "role": "specialist-portrait",
+      "source": "https://assets.alteg.io/masters/origin/a/ac/ac510ef457e7a53_20250405195946.png",
+      "path": "clients/evo/assets/visual/specialists/north-2830441.webp",
+      "mode": "EDIT",
+      "name": "Станислав Шатилов"
+    },
+    {
+      "id": "specialist-north-2122496",
+      "role": "specialist-portrait",
+      "source": "https://assets.alteg.io/masters/origin/e/e3/e3ecfe7d3d751d4_20250324193726.png",
+      "path": "clients/evo/assets/visual/specialists/north-2122496.webp",
+      "mode": "EDIT",
+      "name": "Анастасия Селезнёва"
+    },
+    {
+      "id": "specialist-north-2790435",
+      "role": "specialist-portrait",
+      "source": "https://assets.alteg.io/masters/origin/e/e8/e8a65c2986a04ac_20250324192824.png",
+      "path": "clients/evo/assets/visual/specialists/north-2790435.webp",
+      "mode": "EDIT",
+      "name": "Светлана Гудкова"
+    },
+    {
+      "id": "specialist-north-2747203",
+      "role": "specialist-portrait",
+      "source": "https://assets.alteg.io/masters/origin/5/5a/5ad41764f0b0b9a_20250324195125.png",
+      "path": "clients/evo/assets/visual/specialists/north-2747203.webp",
+      "mode": "EDIT",
+      "name": "Екатерина Худякова"
+    },
+    {
+      "id": "specialist-north-2121149",
+      "role": "specialist-portrait",
+      "source": "https://assets.alteg.io/masters/origin/1/10/100ac2ab57764e2_20250324192659.png",
+      "path": "clients/evo/assets/visual/specialists/north-2121149.webp",
+      "mode": "EDIT",
+      "name": "Александра Салимова"
+    },
+    {
+      "id": "specialist-center-3040206",
+      "role": "specialist-portrait",
+      "source": "https://assets.alteg.io/masters/origin/2/26/26cf099c4432f6b_20260723125456.png",
+      "path": "clients/evo/assets/visual/specialists/center-3040206.webp",
+      "mode": "EDIT",
+      "name": "Rafael Vanesyan"
+    },
+    {
+      "id": "specialist-center-3073691",
+      "role": "specialist-portrait",
+      "source": "https://assets.alteg.io/masters/origin/1/11/113303966ee0ece_20260723115128.png",
+      "path": "clients/evo/assets/visual/specialists/center-3073691.webp",
+      "mode": "EDIT",
+      "name": "Nhi"
+    },
+    {
+      "id": "specialist-center-3027714",
+      "role": "specialist-portrait",
+      "source": "https://assets.alteg.io/masters/origin/d/d0/d0a647d96085ea5_20260723140449.png",
+      "path": "clients/evo/assets/visual/specialists/center-3027714.webp",
+      "mode": "EDIT",
+      "name": "Anastasia Grishina"
+    },
+    {
+      "id": "specialist-center-3007433",
+      "role": "specialist-portrait",
+      "source": "https://assets.alteg.io/masters/origin/b/b6/b60c15ed5bdcfc7_20260328122341.png",
+      "path": "clients/evo/assets/visual/specialists/center-3007433.webp",
+      "mode": "EDIT",
+      "name": "Anhelina Hramchuk"
+    },
+    {
+      "id": "specialist-center-2902769",
+      "role": "specialist-portrait",
+      "source": "https://assets.alteg.io/masters/origin/f/f0/f02ff454b480996_20251024095728.png",
+      "path": "clients/evo/assets/visual/specialists/center-2902769.webp",
+      "mode": "EDIT",
+      "name": "Svetlana Gudkova"
+    },
+    {
+      "id": "specialist-center-2819049",
+      "role": "specialist-portrait",
+      "source": "https://assets.alteg.io/masters/origin/d/d6/d60070c09148480_20250327115235.png",
+      "path": "clients/evo/assets/visual/specialists/center-2819049.webp",
+      "mode": "EDIT",
+      "name": "Lyubov Nadeena"
+    },
+    {
+      "id": "specialist-center-2900216",
+      "role": "specialist-portrait",
+      "source": "https://assets.alteg.io/masters/origin/0/08/087c83af1bfa662_20260723135801.png",
+      "path": "clients/evo/assets/visual/specialists/center-2900216.webp",
+      "mode": "EDIT",
+      "name": "Olga Benke"
+    },
+    {
+      "id": "specialist-center-2819050",
+      "role": "specialist-portrait",
+      "source": "https://assets.alteg.io/masters/origin/c/c5/c5de2aa4ec4dd01_20250324190051.png",
+      "path": "clients/evo/assets/visual/specialists/center-2819050.webp",
+      "mode": "EDIT",
+      "name": "Anna Pavlova"
+    },
+    {
+      "id": "specialist-center-2819048",
+      "role": "specialist-portrait",
+      "source": "https://assets.alteg.io/masters/origin/a/af/afa6f952a9a5f8d_20250324184451.png",
+      "path": "clients/evo/assets/visual/specialists/center-2819048.webp",
+      "mode": "EDIT",
+      "name": "Polina Leskova"
+    },
+    {
+      "id": "specialist-center-2782197",
+      "role": "specialist-portrait",
+      "source": "https://assets.alteg.io/masters/origin/5/5e/5e2f1fde08b36bb_20250324190130.png",
+      "path": "clients/evo/assets/visual/specialists/center-2782197.webp",
+      "mode": "EDIT",
+      "name": "Ekaterina Aleshevskaia"
+    },
+    {
+      "id": "specialist-center-2757481",
+      "role": "specialist-portrait",
+      "source": "https://assets.alteg.io/masters/origin/3/34/344f1f6fb8dc2c5_20241123075721.png",
+      "path": "clients/evo/assets/visual/specialists/center-2757481.webp",
+      "mode": "EDIT",
+      "name": "Thuan"
+    },
+    {
+      "id": "specialist-center-2755466",
+      "role": "specialist-portrait",
+      "source": "https://assets.alteg.io/masters/origin/9/94/9446f22ade93d2f_20241003082150.png",
+      "path": "clients/evo/assets/visual/specialists/center-2755466.webp",
+      "mode": "EDIT",
+      "name": "Aleksandra Salimova"
+    },
+    {
+      "id": "specialist-saigon-3016197",
+      "role": "specialist-portrait",
+      "source": "https://be.cdn.alteg.io/images/no-master.png",
+      "path": "clients/evo/assets/visual/specialists/saigon-3016197.webp",
+      "mode": "PLACEHOLDER",
+      "name": "Администратор Evo"
+    },
+    {
+      "id": "specialist-saigon-2978198",
+      "role": "specialist-portrait",
+      "source": "https://be.cdn.alteg.io/images/no-master.png",
+      "path": "clients/evo/assets/visual/specialists/saigon-2978198.webp",
+      "mode": "PLACEHOLDER",
+      "name": "Арюна Очирова"
+    },
+    {
+      "id": "specialist-saigon-2978196",
+      "role": "specialist-portrait",
+      "source": "https://be.cdn.alteg.io/images/no-master.png",
+      "path": "clients/evo/assets/visual/specialists/saigon-2978196.webp",
+      "mode": "PLACEHOLDER",
+      "name": "Станислав Шатилов"
+    },
+    {
+      "id": "specialist-saigon-2978161",
+      "role": "specialist-portrait",
+      "source": "https://be.cdn.alteg.io/images/no-master.png",
+      "path": "clients/evo/assets/visual/specialists/saigon-2978161.webp",
+      "mode": "PLACEHOLDER",
+      "name": "Анна Бархатова"
+    }
+  ]
+}
