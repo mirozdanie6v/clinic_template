@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "status": "pending",
+  "approvedForUi": false,
+  "brandAnchors": {
+    "logo": [],
+    "colors": [],
+    "recognizableElements": []
+  },
+  "sourceAssessment": {
+    "website": "pending",
+    "social": "pending",
+    "maps": "pending",
+    "bookingSystem": "pending",
+    "ownerMaterials": "pending"
+  },
+  "artDirection": {
+    "mood": [],
+    "photographyStyle": [],
+    "lighting": [],
+    "composition": [],
+    "peopleStyle": [],
+    "backgrounds": [],
+    "imageTreatment": []
+  },
+  "consistencyRules": {
+    "aspectRatios": {},
+    "cropPolicy": "pending",
+    "colorPolicy": "pending",
+    "retouchPolicy": "pending",
+    "realPeoplePolicy": "Preserve real staff identity; do not generate replacement faces for named real specialists.",
+    "socialStylePolicy": "Social media is a source, not an automatic design system. Copy its visual language only when the audit explicitly approves it."
+  },
+  "gate": {
+    "requiredForFinalUi": true,
+    "auditComplete": false,
+    "assetProductionComplete": false
+  }
+}

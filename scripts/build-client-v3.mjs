@@ -33,7 +33,7 @@ if (build.status !== 0) { if (tempPath) fs.rmSync(tempPath, { force: true }); pr
 const runtimePath = path.join(root, "public", "client-data.json");
 if (fs.existsSync(runtimePath)) {
   const runtime = JSON.parse(fs.readFileSync(runtimePath, "utf8"));
-  for (const key of ["legal","brandVoice","audiences","social","portfolio","reviews","faq","offers","seo","assets","provenance","dataQuality"]) {
+  for (const key of ["legal","brandVoice","audiences","social","portfolio","reviews","faq","offers","seo","assets","visualDirection","assetAudit","provenance","dataQuality"]) {
     if (resolved[key] !== undefined) runtime[key] = resolved[key];
   }
   runtime.schemaVersion = resolved.schemaVersion || runtime.schemaVersion;

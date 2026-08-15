@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "status": "pending",
+  "decisionVocabulary": ["USE", "EDIT", "GENERATE", "REFERENCE", "REJECT"],
+  "requiredRoles": [
+    "logo",
+    "hero",
+    "service-family-cover",
+    "specialist-portrait",
+    "portfolio"
+  ],
+  "items": [],
+  "productionQueue": [],
+  "summary": {
+    "use": 0,
+    "edit": 0,
+    "generate": 0,
+    "reference": 0,
+    "reject": 0,
+    "ready": 0,
+    "pendingProduction": 0
+  }
+}
