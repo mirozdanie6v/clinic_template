@@ -1,6 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import "./production-v1.css";
+import "./production-v2.css";
+import "./client-theme.generated.css";
+import "./capability-visibility.css";
 
 export const metadata: Metadata = {
   title: "Clinic Mini App",
