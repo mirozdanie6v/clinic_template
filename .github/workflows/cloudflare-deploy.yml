@@ -48,6 +48,10 @@ jobs:
         if: steps.cloudflare_credentials.outputs.configured == 'true'
         run: pnpm install
 
+      - name: Validate selected client strategy pack
+        if: steps.cloudflare_credentials.outputs.configured == 'true'
+        run: npm run validate:strategy -- "$CLIENT_PASSPORT"
+
       - name: Validate selected client visual audit
         if: steps.cloudflare_credentials.outputs.configured == 'true'
         run: npm run validate:visual -- "$CLIENT_PASSPORT" --final
