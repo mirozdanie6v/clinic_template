@@ -1,0 +1,37 @@
+/* Mobile/iOS/Telegram WebView form stability.
+   16px prevents WebKit focus zoom; fixed geometry avoids visible field jumps. */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+@media (max-width: 699px) {
+  input,
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+
+  .ask-form input,
+  .contact-form input,
+  .altegio-live-booking input {
+    min-height: 52px;
+    line-height: 1.25;
+    transform: none !important;
+    transition: border-color .15s ease, box-shadow .15s ease !important;
+    scroll-margin-top: 18vh;
+    scroll-margin-bottom: 34vh;
+  }
+
+  .contact-form input[type="tel"] {
+    direction: ltr;
+    text-align: start;
+  }
+
+  /* Keep persistent navigation from riding above the software keyboard. */
+  body:has(input:focus) .bottom-nav,
+  body:has(textarea:focus) .bottom-nav {
+    visibility: hidden;
+    pointer-events: none;
+  }
+}

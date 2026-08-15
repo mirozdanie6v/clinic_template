@@ -21,5 +21,17 @@ const newFeatured = `  const featured = (() => {
 if (source.includes(oldFeatured)) source = source.replace(oldFeatured, newFeatured);
 else if (!source.includes("const seen = new Set<string>();")) throw new Error("final-visual-ui: featured services anchor not found");
 
+// These screen render helpers are declared inside ProductionMiniApp. Rendering
+// them as <Component /> gives React a new component type after every parent
+// state update, which remounts controlled inputs and makes mobile/iOS focus
+// visibly jump while typing. Calling the hook-free render helpers directly
+// keeps the input nodes stable across keystrokes.
+const stableScreens = ["Home", "Services", "Specialists", "Booking", "Ai", "Profile", "Admin"];
+for (const name of stableScreens) {
+  const jsx = `<${name} />`;
+  const call = `${name}()`;
+  if (source.includes(jsx)) source = source.replaceAll(jsx, call);
+}
+
 fs.writeFileSync(file, source);
-console.log("final-visual-ui: balanced featured services enabled");
+console.log("final-visual-ui: balanced featured services + stable form screens enabled");
