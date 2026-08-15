@@ -58,7 +58,7 @@ jobs:
 
       - name: Validate Mini App product quality contract
         if: steps.cloudflare_credentials.outputs.configured == 'true'
-        run: npm run validate:product
+        run: npm run validate:product -- "$CLIENT_PASSPORT"
 
       - name: Prepare Next.js Cloudflare autoconfig
         if: steps.cloudflare_credentials.outputs.configured == 'true'
