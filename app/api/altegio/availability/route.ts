@@ -1,4 +1,5 @@
 import { altegioConfigured, altegioErrorResponse, altegioRequest, requirePositiveInteger } from "../../../../lib/altegio";
+import { validateBookingSelection } from "../../../../lib/clinic-booking";
 
 function queryId(params: URLSearchParams, name: string) {
   return requirePositiveInteger(params.get(name), name);
@@ -11,6 +12,7 @@ export async function GET(request: Request) {
     const locationId = queryId(url.searchParams, "locationId");
     const serviceId = queryId(url.searchParams, "serviceId");
     const staffId = queryId(url.searchParams, "staffId");
+    if (!validateBookingSelection(locationId, serviceId, staffId)) return Response.json({ ok: false, code: "BOOKING_SELECTION_NOT_ALLOWED" }, { status: 400 });
     const date = url.searchParams.get("date")?.trim() || "";
 
     if (date) {
