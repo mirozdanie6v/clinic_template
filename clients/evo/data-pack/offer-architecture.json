@@ -1,0 +1,26 @@
+{
+  "status": "ready-v1",
+  "entryOffers": [
+    {"id":"service-discovery","type":"navigation","promise":"Help the user quickly find the relevant service category and exact available service.","cta":"Choose service"},
+    {"id":"specialist-discovery","type":"navigation","promise":"Show only specialists related to the selected service and branch.","cta":"Choose specialist"},
+    {"id":"ai-guided-choice","type":"assistance","promise":"Use the real catalog to help narrow the choice when the user is unsure.","cta":"Ask AI"}
+  ],
+  "strategicOffers": [
+    {"id":"online-booking","type":"core-action","source":"clients/evo/data-pack/integrations.json","cta":"Book online"},
+    {"id":"gift-certificates","type":"evergreen-product","source":"clients/evo/data-pack/offers.json","cta":"View gift certificate"},
+    {"id":"tattoo-removal-consultation","type":"consultation","source":"clients/evo/data-pack/offers.json","cta":"Choose consultation"}
+  ],
+  "bundles": [],
+  "audienceOfferMap": [
+    {"audience":"ru-expats-tourists","priorityActions":["service-discovery","ai-guided-choice","online-booking"]},
+    {"audience":"international-en","priorityActions":["service-discovery","specialist-discovery","online-booking"]},
+    {"audience":"local-vn","priorityActions":["service-discovery","specialist-discovery","online-booking"]}
+  ],
+  "nextBestActions": [
+    {"state":"no-service-selected","action":"choose-service"},
+    {"state":"service-selected","action":"choose-related-specialist"},
+    {"state":"specialist-selected","action":"continue-booking"},
+    {"state":"user-unsure","action":"ask-ai"},
+    {"state":"provider-direct-api-unavailable","action":"open-official-altegio-form"}
+  ]
+}
