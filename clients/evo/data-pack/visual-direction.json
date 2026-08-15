@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "status": "approved",
+  "approvedForUi": true,
+  "auditDate": "2026-08-15",
+  "brandAnchors": {
+    "logo": ["clients/evo/assets/logo.webp"],
+    "colors": ["#49600B", "#354707", "#BC936C", "#F8F6F1", "#FFFFFF", "#26271F"],
+    "recognizableElements": [
+      "official EVO wordmark",
+      "olive/deep-olive brand family",
+      "warm cream and restrained bronze accent"
+    ]
+  },
+  "sourceAssessment": {
+    "website": {
+      "decision": "REFERENCE_WITH_SELECTED_REAL_ASSETS",
+      "reason": "Official and useful for brand facts, real procedures and real work, but its imagery is heterogeneous in format and visual treatment. The product should not inherit the page-level visual mix automatically.",
+      "source": "https://evo.pro.vn/"
+    },
+    "social": {
+      "decision": "REFERENCE_ONLY_BY_DEFAULT",
+      "reason": "Use social channels to discover real people, work and atmosphere. Each individual image must pass quality, rights, crop and palette checks before use. Feed styling is not treated as the design system.",
+      "accounts": ["@evo_pro_beauty", "@evo.vn"]
+    },
+    "maps": {
+      "decision": "REFERENCE_OR_EVIDENCE",
+      "reason": "Useful for real branch context. Customer-uploaded images are not assumed to be reusable production assets."
+    },
+    "bookingSystem": {
+      "decision": "USE_AND_EDIT_REAL_STAFF",
+      "reason": "Altegio is authoritative for current staff portraits and identities. Portraits may be cropped and color-matched, but named real specialists must not be replaced with generated faces."
+    },
+    "ownerMaterials": {
+      "decision": "PREFERRED_WHEN_AVAILABLE",
+      "reason": "Original high-resolution brand and interior files supplied by EVO should supersede compressed social copies when provenance is clear."
+    }
+  },
+  "artDirection": {
+    "name": "EVO Quiet Premium",
+    "mood": ["contemporary", "premium-accessible", "clean", "warm", "confident", "international"],
+    "photographyStyle": [
+      "realistic beauty editorial",
+      "real procedures and real specialists for proof sections",
+      "generated imagery allowed for non-evidentiary category covers only",
+      "natural skin and material texture",
+      "minimal props and visual noise"
+    ],
+    "lighting": ["soft warm-neutral daylight", "controlled highlights", "low color cast", "no harsh cyan or magenta salon lighting"],
+    "composition": ["generous negative space", "one clear subject", "clean 1:1 and 4:5 crops", "detail close-ups paired with occasional environment frames"],
+    "peopleStyle": ["real EVO specialists wherever a named person is shown", "international and contemporary styling", "natural expressions", "no exaggerated retouching"],
+    "backgrounds": ["warm cream", "soft stone", "muted olive", "clean real salon environment when source quality permits"],
+    "imageTreatment": ["unified white balance", "restrained contrast", "muted saturation", "olive/cream harmony", "consistent skin tones", "soft editorial sharpening"]
+  },
+  "contentVisualRules": {
+    "portfolio": "Only real sourced work. Generated images must never be presented as EVO client results or before/after evidence.",
+    "specialists": "Only real specialist portraits or owner-approved replacements of the same real person.",
+    "serviceCovers": "May be generated as editorial category illustrations if clearly used as navigation/cover imagery and not as treatment outcome evidence.",
+    "interiors": "Prefer real EVO interiors. If no reusable real interior exists, use brand graphic composition instead of fabricating a fake EVO location.",
+    "medicalBeauty": "Avoid graphic procedure imagery, unsafe technique depictions and claims implied only by imagery."
+  },
+  "consistencyRules": {
+    "aspectRatios": {
+      "hero": "4:5 mobile / 16:9 responsive crop",
+      "serviceCover": "1:1",
+      "specialistPortrait": "4:5",
+      "portfolio": "1:1 or 4:5; preserve source intent"
+    },
+    "cropPolicy": "Keep face, hands, nails, hair result or treatment focus inside the central safe zone; avoid edge-cut fingers, tools and faces.",
+    "colorPolicy": "All final UI imagery must sit within a warm-neutral palette compatible with #F8F6F1, #49600B and #BC936C. Correct source white balance before use.",
+    "retouchPolicy": "Correct exposure, color, crop and minor distractions. Preserve real texture and do not materially alter treatment results.",
+    "realPeoplePolicy": "Preserve real staff identity; do not generate replacement faces for named real specialists.",
+    "socialStylePolicy": "Social media is a source, not an automatic design system. Copy its visual language only when the audit explicitly approves it."
+  },
+  "gate": {
+    "requiredForFinalUi": true,
+    "auditComplete": true,
+    "assetProductionComplete": false,
+    "blockingReason": "Unified service-cover set and normalized real portrait/portfolio derivatives have not yet been produced."
+  }
+}
