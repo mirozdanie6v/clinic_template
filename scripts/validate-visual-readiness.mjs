@@ -24,6 +24,15 @@ function loadDocument(key) {
   return JSON.parse(fs.readFileSync(docPath, "utf8"));
 }
 
+function productionFileCount(directory) {
+  if (!fs.existsSync(directory) || !fs.statSync(directory).isDirectory()) return 0;
+  return fs.readdirSync(directory, { withFileTypes: true }).reduce((count, entry) => {
+    const full = path.join(directory, entry.name);
+    if (entry.isDirectory()) return count + productionFileCount(full);
+    return count + (/\.(webp|png|jpe?g|avif|svg)$/i.test(entry.name) ? 1 : 0);
+  }, 0);
+}
+
 const visual = loadDocument("visualDirection");
 const audit = loadDocument("assetAudit");
 
@@ -58,6 +67,20 @@ if (finalMode) {
   if (visual?.gate?.assetProductionComplete !== true) fail("visualDirection.gate.assetProductionComplete must be true for final UI");
   const pending = audit.productionQueue.filter((item) => item.readiness !== "ready");
   if (pending.length) fail(`asset production has ${pending.length} pending output(s): ${pending.slice(0, 5).map((item) => item.id).join(", ")}${pending.length > 5 ? "…" : ""}`);
+
+  for (const item of audit.productionQueue) {
+    if (item.output) {
+      const outputPath = path.resolve(root, item.output);
+      if (!fs.existsSync(outputPath) || !fs.statSync(outputPath).isFile()) fail(`missing produced asset for ${item.id}: ${item.output}`);
+    }
+    if (item.outputDirectory) {
+      const outputDir = path.resolve(root, item.outputDirectory);
+      const actual = productionFileCount(outputDir);
+      const expected = Number.isFinite(Number(item.quantity)) ? Number(item.quantity) : 1;
+      if (actual < expected) fail(`produced asset directory for ${item.id} has ${actual} file(s), expected at least ${expected}: ${item.outputDirectory}`);
+    }
+  }
+
   const requiredRoles = Array.isArray(audit.requiredRoles) ? audit.requiredRoles : [];
   for (const role of requiredRoles) {
     const readySource = audit.items.some((item) => item.role === role && item.readiness === "ready" && ["USE", "EDIT"].includes(item.decision));

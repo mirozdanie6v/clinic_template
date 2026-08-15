@@ -51,16 +51,26 @@ featured.forEach((id) => { if (!serviceIds.has(id)) fail(`featuredServiceIds ref
 const consultation = cfg.defaultConsultationServiceId || featured[0] || [...serviceIds][0];
 if (!serviceIds.has(consultation)) fail("defaultConsultationServiceId must reference an existing service");
 
+const publicClientDir = path.join(root, "public", "client");
+fs.mkdirSync(publicClientDir, { recursive: true });
+
 let logo = "/client/logo.png";
 if (clinic.logoSource) {
   const source = path.resolve(root, clinic.logoSource);
   if (fs.existsSync(source)) {
     const ext = path.extname(source).toLowerCase() || ".png";
-    const destination = path.join(root, "public/client");
-    fs.mkdirSync(destination, { recursive: true });
-    fs.copyFileSync(source, path.join(destination, `logo${ext}`));
+    fs.copyFileSync(source, path.join(publicClientDir, `logo${ext}`));
     logo = `/client/logo${ext}`;
   } else console.warn(`clinic-template: logoSource not found yet: ${clinic.logoSource}`);
+}
+
+if (clinic.visualAssetsSource) {
+  const visualSource = path.resolve(root, clinic.visualAssetsSource);
+  const visualDestination = path.join(publicClientDir, "visual");
+  if (!fs.existsSync(visualSource) || !fs.statSync(visualSource).isDirectory()) fail(`visualAssetsSource not found: ${clinic.visualAssetsSource}`);
+  fs.rmSync(visualDestination, { recursive: true, force: true });
+  fs.cpSync(visualSource, visualDestination, { recursive: true });
+  console.log(`clinic-template: published visual assets from ${clinic.visualAssetsSource}`);
 }
 
 const runtimeClinic = {
@@ -99,6 +109,7 @@ const state = {
   clinic: { slug: clinic.slug, name: clinic.name, city: clinic.city },
   counts: { groups: services.length, services: serviceIds.size, specialists: specialists.length },
   integrations: { telegram: Boolean(cfg.telegram?.enabled), ai: Boolean(cfg.ai?.enabled), cloudflare: Boolean(cfg.cloudflare?.workerName) },
+  visualAssets: Boolean(clinic.visualAssetsSource),
 };
 fs.writeFileSync(path.join(root, ".clinic-applied.json"), `${JSON.stringify(state, null, 2)}\n`);
 console.log(`clinic-template: applied ${clinic.name} (${clinic.slug})`);

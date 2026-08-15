@@ -50,7 +50,7 @@ jobs:
 
       - name: Validate selected client visual audit
         if: steps.cloudflare_credentials.outputs.configured == 'true'
-        run: npm run validate:visual -- "$CLIENT_PASSPORT"
+        run: npm run validate:visual -- "$CLIENT_PASSPORT" --final
 
       - name: Build selected client data
         if: steps.cloudflare_credentials.outputs.configured == 'true'
