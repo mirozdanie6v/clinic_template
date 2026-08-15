@@ -1,7 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
 import { spawnSync } from "node:child_process";
-import { materializeGeneratedAssets } from "./lib/materialize-generated-assets.mjs";
 
 const root = process.cwd();
 const passportArg = process.argv[2] || "clients/_template/passport.json";
@@ -9,14 +8,6 @@ const manifestPath = path.resolve(root, passportArg);
 const clientDir = path.dirname(manifestPath);
 const fail = (m) => { console.error(`client-v3: ${m}`); process.exit(1); };
 if (!fs.existsSync(manifestPath)) fail(`passport not found: ${passportArg}`);
-
-try {
-  const materialized = materializeGeneratedAssets(clientDir);
-  if (materialized.count) console.log(`client-v3: materialized ${materialized.count} generated visual assets`);
-} catch (error) {
-  fail(error instanceof Error ? error.message : String(error));
-}
-
 const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
 let resolved = manifest;
 let buildPath = manifestPath;
