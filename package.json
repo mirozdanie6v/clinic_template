@@ -11,6 +11,7 @@
     "build:client": "node scripts/build-client-v3.mjs",
     "build:client:final": "node scripts/build-client-final.mjs",
     "validate:visual": "node scripts/validate-visual-readiness.mjs",
+    "validate:product": "node scripts/validate-product-quality.mjs",
     "apply:clinic": "node scripts/apply-clinic-config.mjs"
   },
   "dependencies": {
