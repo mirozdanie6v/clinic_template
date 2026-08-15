@@ -1,0 +1,5 @@
+/* Capability presentation layer. Visibility and backend readiness are separate concerns. */
+.bottom-nav{grid-template-columns:repeat(var(--client-nav-columns,5),1fr)}
+.bottom-nav button:nth-child(4){display:var(--client-ai-display,flex)}
+.quick-grid .quick-card:nth-child(4){display:var(--client-ai-action-display,flex)}
+.quick-grid .quick-card:nth-child(3){grid-column:var(--client-specialist-action-column,auto)}
