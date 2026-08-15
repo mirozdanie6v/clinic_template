@@ -1,0 +1,11 @@
+{
+  "status": "template",
+  "proofRequirements": [],
+  "journeyPlacement": [],
+  "riskReducers": [],
+  "evidencePolicy": {
+    "fabricatedProofAllowed": false,
+    "generatedResultsAsEvidenceAllowed": false,
+    "generatedReviewsAllowed": false
+  }
+}
