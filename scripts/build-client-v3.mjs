@@ -51,9 +51,11 @@ if (fs.existsSync(visualManifestPath)) {
     .map((item) => `/${path.relative(path.join(clientDir, "assets"), path.resolve(root, item.path)).replaceAll("\\", "/")}`)
     .map((relative) => relative.replace(/^\/visual\//, "/client/visual/"));
 }
-const aiEnabled = resolved.integrations?.ai?.enabled ?? resolved.ai?.enabled ?? true;
+const aiConfig = resolved.integrations?.ai || resolved.ai || {};
+const aiVisible = aiConfig.visible ?? true;
+const aiEnabled = aiConfig.enabled ?? false;
 const cssUrl = (value) => value ? `url(${JSON.stringify(value)})` : "none";
-const themeCss = `:root {\n  --clinic-background: ${cssValue("background")};\n  --clinic-surface: ${cssValue("surface")};\n  --clinic-text: ${cssValue("text")};\n  --clinic-muted: ${cssValue("muted")};\n  --clinic-primary: ${cssValue("primary")};\n  --clinic-primary-dark: ${cssValue("primaryDark")};\n  --clinic-accent: ${cssValue("accent")};\n  --client-portfolio-display: ${portfolioPaths.length ? "block" : "none"};\n  --client-portfolio-1: ${cssUrl(portfolioPaths[0])};\n  --client-portfolio-2: ${cssUrl(portfolioPaths[1])};\n  --client-portfolio-3: ${cssUrl(portfolioPaths[2])};\n  --client-portfolio-4: ${cssUrl(portfolioPaths[3])};\n  --client-ai-display: ${aiEnabled ? "flex" : "none"};\n  --client-ai-action-display: ${aiEnabled ? "flex" : "none"};\n  --client-nav-columns: ${aiEnabled ? 5 : 4};\n  --client-specialist-action-column: ${aiEnabled ? "auto" : "1 / -1"};\n}\n`;
+const themeCss = `:root {\n  --clinic-background: ${cssValue("background")};\n  --clinic-surface: ${cssValue("surface")};\n  --clinic-text: ${cssValue("text")};\n  --clinic-muted: ${cssValue("muted")};\n  --clinic-primary: ${cssValue("primary")};\n  --clinic-primary-dark: ${cssValue("primaryDark")};\n  --clinic-accent: ${cssValue("accent")};\n  --client-portfolio-display: ${portfolioPaths.length ? "block" : "none"};\n  --client-portfolio-1: ${cssUrl(portfolioPaths[0])};\n  --client-portfolio-2: ${cssUrl(portfolioPaths[1])};\n  --client-portfolio-3: ${cssUrl(portfolioPaths[2])};\n  --client-portfolio-4: ${cssUrl(portfolioPaths[3])};\n  --client-ai-display: ${aiVisible ? "flex" : "none"};\n  --client-ai-action-display: ${aiVisible ? "flex" : "none"};\n  --client-nav-columns: ${aiVisible ? 5 : 4};\n  --client-specialist-action-column: ${aiVisible ? "auto" : "1 / -1"};\n}\n`;
 fs.writeFileSync(path.join(root, "app", "client-theme.generated.css"), themeCss);
 
 const runtimePath = path.join(root, "public", "client-data.json");
@@ -69,4 +71,4 @@ if (fs.existsSync(runtimePath)) {
 }
 if (tempPath) fs.rmSync(tempPath, { force: true });
 console.log(`client-v3: built ${resolved.client?.name || passportArg} via ${builder}`);
-console.log(`client-v3: theme ${cssValue("primaryDark")} / ${cssValue("background")}, portfolio=${portfolioPaths.length}, ai=${aiEnabled ? "on" : "off"}`);
+console.log(`client-v3: theme ${cssValue("primaryDark")} / ${cssValue("background")}, portfolio=${portfolioPaths.length}, ai=${aiVisible ? "visible" : "hidden"}/${aiEnabled ? "enabled" : "disabled"}`);
