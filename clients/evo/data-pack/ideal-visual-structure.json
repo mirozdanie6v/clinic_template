@@ -1,0 +1,53 @@
+{
+  "status": "ready-v1",
+  "artDirection": {
+    "name": "EVO Quiet Premium 2.0",
+    "concept": "A single editorial beauty campaign derived from EVO brand anchors and rebuilt into a cleaner, calmer, more premium visual system.",
+    "mood": ["quiet premium","warm","modern","clean","international","tactile","care-focused"],
+    "generationPolicy": "Hero and navigation/service-category imagery are generated or art-directed into one campaign instead of directly inserting inconsistent source-feed photos."
+  },
+  "paletteLogic": {
+    "base": ["#F8F6F1","#FFFFFF"],
+    "brand": ["#49600B","#354707"],
+    "accent": ["#BC936C"],
+    "photoPalette": ["warm cream","soft stone","muted olive","natural skin","restrained bronze"],
+    "avoid": ["strong cyan","strong magenta","neon salon lighting","cold blue clinical cast"]
+  },
+  "typographyMood": {"display":"editorial, refined, calm","ui":"clear, compact, modern","hierarchy":"strong contrast between display headings and functional UI copy"},
+  "imageSystem": {
+    "globalLook": ["high-end beauty editorial","natural texture","one clear subject","minimal props","consistent warm-neutral grade"],
+    "lighting": ["soft directional daylight","controlled highlights","natural skin","gentle shadow depth"],
+    "composition": ["generous negative space","mobile-safe central subject","single semantic focus","no clutter"],
+    "backgrounds": ["warm cream","soft mineral stone","muted olive accents","subtle natural materials"],
+    "peoplePolicy": ["generic generated models are allowed for non-evidentiary service navigation","named EVO specialists must preserve real identity","generated people cannot be presented as real EVO staff"]
+  },
+  "serviceGroupRules": [
+    {"group":"hair","semanticIntent":"healthy styled hair, movement and shine","scene":"editorial three-quarter/back portrait emphasizing hair texture and motion","avoid":"generic face-first portrait"},
+    {"group":"manicure","semanticIntent":"precision hand and nail care","scene":"clean macro of hands with refined manicure against warm stone/cream","avoid":"hair or face imagery"},
+    {"group":"pedicure","semanticIntent":"groomed feet and premium care","scene":"elegant seated lower-leg/foot composition with spa detail","avoid":"medical pathology imagery"},
+    {"group":"podology","semanticIntent":"professional foot care and precision","scene":"clean specialist-tool detail with hygienic, clinical-beauty restraint","avoid":"graphic conditions or wounds"},
+    {"group":"brows","semanticIntent":"shape, balance and facial framing","scene":"close beauty portrait focused on brows and symmetry","avoid":"full makeup campaign feel"},
+    {"group":"permanent-makeup","semanticIntent":"precision and subtle enhancement","scene":"close portrait with refined lip/brow focus and artist-hand detail","avoid":"exaggerated before-after results"},
+    {"group":"cosmetology","semanticIntent":"skin quality, care and expert procedure","scene":"calm treatment close-up with gloved professional hands and luminous natural skin","avoid":"needles dominating frame"},
+    {"group":"laser-epilation","semanticIntent":"smoothness, technology and comfort","scene":"clean device-treatment composition on leg/arm with soft premium lighting","avoid":"sexualized body framing"},
+    {"group":"tattoo","semanticIntent":"artistry and controlled self-expression","scene":"minimal close-up of tattoo artist process with elegant composition","avoid":"busy tattoo-shop aesthetic"},
+    {"group":"tattoo-removal","semanticIntent":"technology, correction and controlled process","scene":"laser-device close-up with tattoo area, restrained clinical-beauty mood","avoid":"fake result comparison"},
+    {"group":"gift-certificates","semanticIntent":"care as a premium gift","scene":"minimal branded gift card/envelope composition with cream, olive and bronze materials","avoid":"generic flowers-only still life"}
+  ],
+  "heroRules": {
+    "semanticIntent":"EVO as a complete beauty space, calm and premium",
+    "scene":"editorial female beauty portrait/environment hybrid with subtle cues to multi-service care, generous negative space for UI",
+    "mustMatchCampaign":true
+  },
+  "specialistRules": {
+    "identity":"preserve real named specialist identity",
+    "treatment":"normalize crop, background tone, white balance and contrast into the campaign system",
+    "syntheticReplacementFaceAllowed":false
+  },
+  "portfolioRules": {
+    "evidence":"real sourced work only when presented as EVO work/result",
+    "generatedPortfolioAsEvidenceAllowed":false,
+    "displayTreatment":"unified crop, border, spacing and neutral grade without altering the result"
+  },
+  "forbiddenPatterns": ["duplicate primary service-group image","same generic beauty portrait for unrelated categories","fake review/results imagery","fake EVO branch interior","generated replacement face for a named specialist","mixed unrelated color grades"]
+}
