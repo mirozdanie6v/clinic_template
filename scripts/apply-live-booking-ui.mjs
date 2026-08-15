@@ -30,8 +30,8 @@ if (!source.includes("<AltegioLiveBooking")) {
         onContactChange={(next) => setContact(next)}
         onBooked={(next) => {
           setAppointment(next as Appointment);
-          window.localStorage.setItem(\`${clinicDefaults.slug}-appointment\`, JSON.stringify(next));
-          window.localStorage.setItem(\`${clinicDefaults.slug}-profile\`, JSON.stringify({ name: next.name, phone: next.phone }));
+          window.localStorage.setItem(clinicDefaults.slug + "-appointment", JSON.stringify(next));
+          window.localStorage.setItem(clinicDefaults.slug + "-profile", JSON.stringify({ name: next.name, phone: next.phone }));
         }}
       />}`;
   source = source.replace(block, replacement);
