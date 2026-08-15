@@ -1,0 +1,38 @@
+{
+  "status": "ready-v1",
+  "preserve": [
+    "EVO wordmark",
+    "olive and deep-olive brand family",
+    "warm cream base",
+    "restrained bronze accent",
+    "international multi-service beauty positioning"
+  ],
+  "improve": [
+    "visual consistency across all service categories",
+    "clearer hierarchy and stronger editorial composition",
+    "one photographic language across generated navigation imagery",
+    "distinct semantic image for every service group",
+    "stronger premium perception without excessive luxury styling",
+    "more controlled relationship between brand color and photography"
+  ],
+  "avoid": [
+    "copying inconsistent social-feed layouts as the product design system",
+    "repeating one photo across different service groups",
+    "mixed cyan/magenta salon lighting",
+    "generic beauty-stock imagery with no service meaning",
+    "overly medical visual language for routine beauty services",
+    "fake documentary imagery presented as EVO specialists, results or interiors"
+  ],
+  "targetPerception": ["quiet premium","modern","organized","international","care-focused","trustworthy","easy to choose from"],
+  "brandAnchors": ["#49600B","#354707","#BC936C","#F8F6F1","EVO wordmark"],
+  "positioning": {
+    "core": "A coherent multi-service beauty space where a large choice feels curated, understandable and easy to book.",
+    "visualPromise": "One calm premium campaign across every touchpoint.",
+    "experiencePromise": "Clear service choice, clear specialist relevance and controlled booking context."
+  },
+  "sourceAccountAssessment": [
+    {"source":"official website","use":"brand facts, service meaning, visual reference, real evidence where rights/source permit","rule":"do not copy layout literally"},
+    {"source":"social accounts","use":"recognizable mood, real people/work references, audience cues","rule":"derive the strongest brand signals and rebuild them into one ideal system"},
+    {"source":"booking system","use":"authoritative specialist identity and service relations","rule":"identity must remain factual"}
+  ]
+}
