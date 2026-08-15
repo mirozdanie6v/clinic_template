@@ -49,7 +49,7 @@ for (const [index, item] of audit.items.entries()) {
 for (const [index, item] of audit.productionQueue.entries()) {
   if (!item?.id || !item?.role || !item?.action) fail(`assetAudit.productionQueue[${index}] requires id, role and action`);
   if (!["USE", "EDIT", "GENERATE"].includes(item.action)) fail(`assetAudit.productionQueue[${index}] has invalid action ${item.action}`);
-  if (!item.output && item.action !== "USE") fail(`assetAudit.productionQueue[${index}] requires output for ${item.action}`);
+  if (!item.output && !item.outputDirectory && item.action !== "USE") fail(`assetAudit.productionQueue[${index}] requires output or outputDirectory for ${item.action}`);
 }
 
 if (finalMode) {
