@@ -1,1 +1,1 @@
-{"booking":{"provider":"internal","enabled":false},"telegram":{"enabled":false,"botUsername":"","adminChatId":""},"ai":{"enabled":false,"model":"gpt-5.6","aliases":{}},"cloudflare":{"workerName":"","workerOrigin":"","appUrl":""}}
+{"booking":{"provider":"internal","enabled":false},"telegram":{"enabled":false,"botUsername":"","adminChatId":""},"ai":{"visible":true,"enabled":false,"model":"gpt-5.6","aliases":{}},"cloudflare":{"workerName":"","workerOrigin":"","appUrl":""}}
