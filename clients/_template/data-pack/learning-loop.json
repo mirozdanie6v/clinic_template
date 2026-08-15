@@ -1,0 +1,11 @@
+{
+  "status": "template",
+  "defectRule": "Every discovered client defect is traced to its source stage, fixed at the reusable layer and added to regression coverage.",
+  "successRule": "Every repeatedly successful pattern is evaluated for promotion into a reusable capability, component or strategy rule.",
+  "regressionPolicy": {
+    "p0p1MustBlockRelease": true,
+    "productionDefectRequiresRegression": true,
+    "clientSpecificExceptionsMustBeDocumented": true
+  },
+  "learnings": []
+}
