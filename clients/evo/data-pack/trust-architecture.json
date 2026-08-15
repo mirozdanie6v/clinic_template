@@ -1,0 +1,22 @@
+{
+  "status": "ready-v1",
+  "proofRequirements": [
+    {"id":"specialist-identity","need":"Show the real identity of a named specialist.","allowedEvidence":["source portrait","name","specialty","branch","exact service relations"],"generatedEvidenceAllowed":false},
+    {"id":"service-proof","need":"Support quality perception without inventing treatment outcomes.","allowedEvidence":["real sourced portfolio","real procedure imagery when reusable","source-backed descriptions"],"generatedEvidenceAllowed":false},
+    {"id":"booking-trust","need":"Make the handoff to booking feel controlled and legitimate.","allowedEvidence":["selected branch","selected service","selected specialist","official Altegio fallback"],"generatedEvidenceAllowed":false},
+    {"id":"brand-quality","need":"Create a coherent premium perception.","allowedEvidence":["designed visual system","generated editorial navigation imagery","consistent typography and spacing"],"generatedEvidenceAllowed":true}
+  ],
+  "journeyPlacement": [
+    {"stage":"home","proof":["brand-quality","location clarity","service breadth"]},
+    {"stage":"service-detail","proof":["service relevance","real portfolio when available","related specialists"]},
+    {"stage":"specialist","proof":["specialist-identity","exact related services","branch"]},
+    {"stage":"booking","proof":["booking-trust","selected context","official provider"]}
+  ],
+  "riskReducers": ["persistent branch context","exact service-to-specialist relation","clear fallback when direct provider API is unavailable","no invented review text","no generated treatment result presented as proof"],
+  "evidencePolicy": {
+    "fabricatedProofAllowed": false,
+    "generatedResultsAsEvidenceAllowed": false,
+    "generatedReviewsAllowed": false,
+    "generatedNavigationImageryAllowed": true
+  }
+}
