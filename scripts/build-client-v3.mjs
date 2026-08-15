@@ -61,7 +61,7 @@ fs.writeFileSync(path.join(root, "app", "client-theme.generated.css"), themeCss)
 const runtimePath = path.join(root, "public", "client-data.json");
 if (fs.existsSync(runtimePath)) {
   const runtime = JSON.parse(fs.readFileSync(runtimePath, "utf8"));
-  for (const key of ["legal","brandVoice","audiences","social","portfolio","reviews","faq","offers","seo","assets","visualDirection","assetAudit","provenance","dataQuality"]) {
+  for (const key of ["legal","brandVoice","audiences","social","portfolio","reviews","faq","offers","seo","assets","visualDirection","assetAudit","provenance","dataQuality","quality"]) {
     if (resolved[key] !== undefined) runtime[key] = resolved[key];
   }
   runtime.schemaVersion = resolved.schemaVersion || runtime.schemaVersion;
