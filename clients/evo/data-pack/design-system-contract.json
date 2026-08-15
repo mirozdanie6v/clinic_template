@@ -1,0 +1,46 @@
+{
+  "status": "ready-v1",
+  "spacing": {
+    "baseUnit": 4,
+    "scale": [4,8,12,16,20,24,32,40,48],
+    "minimumContainerInsetMobile": 12,
+    "sectionRhythm": "Use 24-48px vertical rhythm; compact UI groups may use 12-20px."
+  },
+  "typography": {
+    "mobileInputMinPx": 16,
+    "essentialTextMinPx": 10,
+    "secondaryTextTargetMinPx": 11,
+    "bodyTargetMinPx": 12,
+    "displayStyle": "editorial serif",
+    "uiStyle": "clean sans serif"
+  },
+  "controls": {
+    "mobileTouchTargetMinPx": 44,
+    "formControlMinHeightPx": 44,
+    "primaryActionPreferredMinHeightPx": 52,
+    "disabledStateRequired": true
+  },
+  "containers": {
+    "textMustRemainInsideContainer": true,
+    "minimumInternalPaddingPx": 12,
+    "overlayRequiresExplicitComponent": true,
+    "contentClippingForbidden": true,
+    "stickyCollisionTestingRequired": true
+  },
+  "responsive": {
+    "minimumViewportPx": 320,
+    "testWidths": [320,360,390,430],
+    "safeAreaRequired": true,
+    "keyboardCollisionTestRequired": true,
+    "telegramWebViewRequired": true
+  },
+  "componentRules": [
+    "One component class should have one visual hierarchy across screens.",
+    "Persistent navigation must reserve content space.",
+    "Long RU/EN/VI content must wrap intentionally.",
+    "Service cards use unique group imagery and consistent aspect treatment.",
+    "Critical CTA cannot be visually covered by sticky/fixed UI.",
+    "Text cannot be placed outside its container bounds or float over decorative shapes without an explicit overlay component."
+  ],
+  "exceptions": []
+}
