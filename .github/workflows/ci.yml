@@ -22,5 +22,5 @@ jobs:
       - run: npm run validate:visual -- clients/evo/passport.json
       - run: npm run validate:visual -- clients/evo/passport.json --final
       - run: npm run build:client -- clients/evo/passport.json
-      - run: npm run validate:product
+      - run: npm run validate:product -- clients/evo/passport.json
       - run: npm run build
