@@ -1,0 +1,35 @@
+{
+  "status": "ready-for-production-v1",
+  "globalDirection": {
+    "campaign": "EVO Quiet Premium 2.0",
+    "palette": ["warm cream","soft stone","muted olive","natural skin","restrained bronze"],
+    "lighting": ["soft directional daylight","controlled highlights","low color cast"],
+    "cameraLanguage": ["editorial beauty photography","clean macro details","generous negative space","mobile-safe crops"],
+    "retouching": ["natural texture","restrained contrast","muted saturation","consistent skin tones"],
+    "consistencyRule": "All generated navigation imagery must look like one coherent EVO campaign."
+  },
+  "assets": [
+    {"id":"evo-hero-campaign","role":"hero","semanticIntent":"EVO as a complete calm premium beauty space","artDirection":"EVO Quiet Premium 2.0","generation":"generate","aspect":"4:5"},
+    {"id":"evo-group-hair","role":"service-group-cover","serviceGroup":"hair","primaryForGroup":true,"semanticIntent":"healthy styled hair, movement and shine","artDirection":"EVO Quiet Premium 2.0","generation":"generate","aspect":"4:5"},
+    {"id":"evo-group-manicure","role":"service-group-cover","serviceGroup":"manicure","primaryForGroup":true,"semanticIntent":"precision hand and nail care","artDirection":"EVO Quiet Premium 2.0","generation":"generate","aspect":"4:5"},
+    {"id":"evo-group-pedicure","role":"service-group-cover","serviceGroup":"pedicure","primaryForGroup":true,"semanticIntent":"groomed feet and premium care","artDirection":"EVO Quiet Premium 2.0","generation":"generate","aspect":"4:5"},
+    {"id":"evo-group-podology","role":"service-group-cover","serviceGroup":"podology","primaryForGroup":true,"semanticIntent":"professional hygienic foot care and precision","artDirection":"EVO Quiet Premium 2.0","generation":"generate","aspect":"4:5"},
+    {"id":"evo-group-brows","role":"service-group-cover","serviceGroup":"brows","primaryForGroup":true,"semanticIntent":"brow shape, balance and facial framing","artDirection":"EVO Quiet Premium 2.0","generation":"generate","aspect":"4:5"},
+    {"id":"evo-group-permanent-makeup","role":"service-group-cover","serviceGroup":"permanent-makeup","primaryForGroup":true,"semanticIntent":"precision and subtle facial enhancement","artDirection":"EVO Quiet Premium 2.0","generation":"generate","aspect":"4:5"},
+    {"id":"evo-group-cosmetology","role":"service-group-cover","serviceGroup":"cosmetology","primaryForGroup":true,"semanticIntent":"skin quality, expert care and calm procedure","artDirection":"EVO Quiet Premium 2.0","generation":"generate","aspect":"4:5"},
+    {"id":"evo-group-laser","role":"service-group-cover","serviceGroup":"laser-epilation","primaryForGroup":true,"semanticIntent":"smoothness, technology and comfort","artDirection":"EVO Quiet Premium 2.0","generation":"generate","aspect":"4:5"},
+    {"id":"evo-group-tattoo","role":"service-group-cover","serviceGroup":"tattoo","primaryForGroup":true,"semanticIntent":"artistry and controlled self-expression","artDirection":"EVO Quiet Premium 2.0","generation":"generate","aspect":"4:5"},
+    {"id":"evo-group-tattoo-removal","role":"service-group-cover","serviceGroup":"tattoo-removal","primaryForGroup":true,"semanticIntent":"technology, correction and controlled process","artDirection":"EVO Quiet Premium 2.0","generation":"generate","aspect":"4:5"},
+    {"id":"evo-group-gift","role":"service-group-cover","serviceGroup":"gift-certificates","primaryForGroup":true,"semanticIntent":"care as a premium branded gift","artDirection":"EVO Quiet Premium 2.0","generation":"generate","aspect":"4:5"}
+  ],
+  "rules": {
+    "uniquePrimaryImagePerServiceGroup": true,
+    "semanticMatchRequired": true,
+    "samePrimaryImageAcrossGroupsAllowed": false,
+    "generatedPeopleMayImpersonateRealSpecialists": false,
+    "generatedResultsMayBePresentedAsEvidence": false,
+    "generatedBranchInteriorsMayBePresentedAsDocumentary": false,
+    "namedSpecialistPortraitMode": "edit/normalize real source while preserving identity",
+    "realPortfolioMode": "keep factual; normalize crop and grade only"
+  }
+}
