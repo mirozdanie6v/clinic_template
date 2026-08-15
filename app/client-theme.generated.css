@@ -1,0 +1,14 @@
+:root {
+  --clinic-background: #F7F5F0;
+  --clinic-surface: #FFFFFF;
+  --clinic-text: #20211D;
+  --clinic-muted: #61645B;
+  --clinic-primary: #68783C;
+  --clinic-primary-dark: #4F5E2A;
+  --clinic-accent: #B7D36B;
+  --client-portfolio-display: none;
+  --client-portfolio-1: none;
+  --client-portfolio-2: none;
+  --client-portfolio-3: none;
+  --client-portfolio-4: none;
+}
