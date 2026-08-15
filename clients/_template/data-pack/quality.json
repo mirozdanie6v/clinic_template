@@ -1,0 +1,16 @@
+{
+  "contractVersion": 1,
+  "stage": "0.3-product-capability-contract",
+  "releaseGates": {
+    "productQa": true,
+    "runtimeAcceptance": true,
+    "postDeploySmoke": true
+  },
+  "viewports": [320, 360, 390, 430, 768],
+  "environments": ["android-chrome", "iphone-safari", "telegram-android", "telegram-iphone", "desktop-smoke"],
+  "languages": ["ru", "en", "vi"],
+  "journeys": ["home", "services", "specialists", "booking", "profile"],
+  "capabilityStates": [],
+  "acceptedExceptions": [],
+  "regressions": []
+}
