@@ -65,3 +65,18 @@ jobs:
         run: |
           set -o pipefail
           npx wrangler@latest deploy
+
+      - name: Provision Altegio runtime secret
+        if: steps.cloudflare_credentials.outputs.configured == 'true'
+        shell: bash
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: 3972de85ae8b3d2ee3e0d35ecf7ca358
+          ALTEGIO_PARTNER_TOKEN: ${{ secrets.ALTEGIO_PARTNER_TOKEN }}
+        run: |
+          if [ -n "${ALTEGIO_PARTNER_TOKEN:-}" ]; then
+            printf '%s' "$ALTEGIO_PARTNER_TOKEN" | npx wrangler@latest secret put ALTEGIO_PARTNER_TOKEN --name clinic-template
+            echo "Altegio runtime secret provisioned."
+          else
+            echo "ALTEGIO_PARTNER_TOKEN is not configured in GitHub Actions; embedded booking will use the official Altegio fallback."
+          fi
