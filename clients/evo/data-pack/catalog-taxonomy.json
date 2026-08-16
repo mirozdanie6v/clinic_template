@@ -21,87 +21,87 @@
     {
       "id":"hair",
       "title":{"ru":"Волосы","en":"Hair","vi":"Tóc"},
-      "image":"/client/visual/catalog/hair-cuts-styling.webp",
+      "image":"/client/visual/service-hair.webp",
       "subgroups":[
-        {"id":"hair-cuts-styling","title":{"ru":"Стрижки и укладки","en":"Cuts & styling","vi":"Cắt & tạo kiểu"},"image":"/client/visual/catalog/hair-cuts-styling.webp","rawCategories":["Haircutting/Hairstyling","Стрижки / Укладки"]},
-        {"id":"hair-care-restoration","title":{"ru":"Уход и восстановление","en":"Care & restoration","vi":"Chăm sóc & phục hồi"},"image":"/client/visual/catalog/hair-care-restoration.webp","rawCategories":["Hair Treatment& Styling","More Hair Treatments","Уходы с укладкой","Уходы дополнительно к другой услуге"]},
-        {"id":"hair-coloring","title":{"ru":"Окрашивание","en":"Hair coloring","vi":"Nhuộm tóc"},"image":"/client/visual/catalog/hair-coloring.webp","rawCategories":["Hair Coloring/ Hair Toning","Advanced Hair Coloring Techniques","Complex Hair Coloring","Hair Coloring in a Bright Color","Total Blonde Correction","Hair Color Removal","Total Blond Coloring for Men","Окрашивание / Тонирование","Сложное окрашивание","Сложное окрашивание (AirTouch, Shatush, Total Blond)","Сложное окрашивание в яркий цвет","Коррекция Total Blond","Снятие цвета","Окрашивание Total Blond для мужчин"]},
-        {"id":"hair-perm","title":{"ru":"Биозавивка","en":"Bio perm","vi":"Uốn sinh học"},"image":"/client/visual/catalog/hair-perm.webp","rawCategories":["Bio Perm Service"]},
-        {"id":"barber","title":{"ru":"Барбер","en":"Barber","vi":"Barber"},"image":"/client/visual/catalog/barber.webp","rawCategories":["Barber","Барбер"]}
+        {"id":"hair-cuts-styling","title":{"ru":"Стрижки и укладки","en":"Cuts & styling","vi":"Cắt & tạo kiểu"},"image":"/client/visual/specialists/center-3027714.webp","rawCategories":["Haircutting/Hairstyling","Стрижки / Укладки"]},
+        {"id":"hair-care-restoration","title":{"ru":"Уход и восстановление","en":"Care & restoration","vi":"Chăm sóc & phục hồi"},"image":"/client/visual/specialists/center-3073691.webp","rawCategories":["Hair Treatment& Styling","More Hair Treatments","Уходы с укладкой","Уходы дополнительно к другой услуге"]},
+        {"id":"hair-coloring","title":{"ru":"Окрашивание","en":"Hair coloring","vi":"Nhuộm tóc"},"image":"/client/visual/specialists/north-2747203.webp","rawCategories":["Hair Coloring/ Hair Toning","Advanced Hair Coloring Techniques","Complex Hair Coloring","Hair Coloring in a Bright Color","Total Blonde Correction","Hair Color Removal","Total Blond Coloring for Men","Окрашивание / Тонирование","Сложное окрашивание","Сложное окрашивание (AirTouch, Shatush, Total Blond)","Сложное окрашивание в яркий цвет","Коррекция Total Blond","Снятие цвета","Окрашивание Total Blond для мужчин"]},
+        {"id":"hair-perm","title":{"ru":"Биозавивка","en":"Bio perm","vi":"Uốn sinh học"},"image":"/client/visual/specialists/north-2121149.webp","rawCategories":["Bio Perm Service"]},
+        {"id":"barber","title":{"ru":"Барбер","en":"Barber","vi":"Barber"},"image":"/client/visual/specialists/center-2757481.webp","rawCategories":["Barber","Барбер"]}
       ]
     },
     {
       "id":"nails",
       "title":{"ru":"Ногти и стопы","en":"Nails & feet","vi":"Móng & bàn chân"},
-      "image":"/client/visual/catalog/manicure.webp",
+      "image":"/client/visual/service-manicure.webp",
       "subgroups":[
-        {"id":"manicure","title":{"ru":"Маникюр","en":"Manicure","vi":"Làm móng tay"},"image":"/client/visual/catalog/manicure.webp","rawCategories":["Manicure","Маникюр"]},
-        {"id":"pedicure","title":{"ru":"Педикюр","en":"Pedicure","vi":"Làm móng chân"},"image":"/client/visual/catalog/pedicure.webp","rawCategories":["Pedicure","Педикюр"]},
-        {"id":"podology","title":{"ru":"Подология","en":"Podology","vi":"Chăm sóc bàn chân chuyên sâu"},"image":"/client/visual/catalog/podology.webp","rawCategories":["Подология"]}
+        {"id":"manicure","title":{"ru":"Маникюр","en":"Manicure","vi":"Làm móng tay"},"image":"/client/visual/portfolio/manicure-01.webp","rawCategories":["Manicure","Маникюр"]},
+        {"id":"pedicure","title":{"ru":"Педикюр","en":"Pedicure","vi":"Làm móng chân"},"image":"/client/visual/service-pedicure.webp","rawCategories":["Pedicure","Педикюр"]},
+        {"id":"podology","title":{"ru":"Подология","en":"Podology","vi":"Chăm sóc bàn chân chuyên sâu"},"image":"/client/visual/service-podology.webp","rawCategories":["Подология"]}
       ]
     },
     {
       "id":"brows-lashes",
       "title":{"ru":"Брови и ресницы","en":"Brows & lashes","vi":"Chân mày & mi"},
-      "image":"/client/visual/catalog/brows.webp",
+      "image":"/client/visual/service-brows-lashes.webp",
       "subgroups":[
-        {"id":"brows","title":{"ru":"Брови","en":"Brows","vi":"Chân mày"},"image":"/client/visual/catalog/brows.webp","rawCategories":["Брови"]},
-        {"id":"lashes","title":{"ru":"Ресницы","en":"Lashes","vi":"Lông mi"},"image":"/client/visual/catalog/lashes.webp","rawCategories":["Ресницы","Наращивание ресниц"]}
+        {"id":"brows","title":{"ru":"Брови","en":"Brows","vi":"Chân mày"},"image":"/client/visual/specialists/center-3007433.webp","rawCategories":["Брови"]},
+        {"id":"lashes","title":{"ru":"Ресницы","en":"Lashes","vi":"Lông mi"},"image":"/client/visual/specialists/north-2942760.webp","rawCategories":["Ресницы","Наращивание ресниц"]}
       ]
     },
     {
       "id":"permanent-makeup",
       "title":{"ru":"Перманентный макияж","en":"Permanent makeup","vi":"Phun xăm thẩm mỹ"},
-      "image":"/client/visual/catalog/pmu.webp",
+      "image":"/client/visual/service-pmu.webp",
       "subgroups":[
-        {"id":"pmu","title":{"ru":"Перманентный макияж","en":"Permanent makeup","vi":"Phun xăm thẩm mỹ"},"image":"/client/visual/catalog/pmu.webp","rawCategories":["Перманентный макияж"]},
-        {"id":"pmu-correction","title":{"ru":"Коррекция и удаление перманента","en":"PMU correction & removal","vi":"Chỉnh sửa & xóa phun xăm"},"image":"/client/visual/catalog/pmu-correction.webp","rawCategories":["Коррекция перманентного макияжа"]}
+        {"id":"pmu","title":{"ru":"Перманентный макияж","en":"Permanent makeup","vi":"Phun xăm thẩm mỹ"},"image":"/client/visual/specialists/north-2122496.webp","rawCategories":["Перманентный макияж"]},
+        {"id":"pmu-correction","title":{"ru":"Коррекция и удаление перманента","en":"PMU correction & removal","vi":"Chỉnh sửa & xóa phun xăm"},"image":"/client/visual/specialists/center-2819048.webp","rawCategories":["Коррекция перманентного макияжа"]}
       ]
     },
     {
       "id":"laser",
       "title":{"ru":"Лазерная эпиляция","en":"Laser hair removal","vi":"Triệt lông laser"},
-      "image":"/client/visual/catalog/laser-women.webp",
+      "image":"/client/visual/service-laser.webp",
       "subgroups":[
-        {"id":"laser-women","title":{"ru":"Для женщин","en":"Women","vi":"Nữ"},"image":"/client/visual/catalog/laser-women.webp","rawCategories":["Женская эпиляция"]},
-        {"id":"laser-men","title":{"ru":"Для мужчин","en":"Men","vi":"Nam"},"image":"/client/visual/catalog/laser-men.webp","rawCategories":["Мужская эпиляция"]}
+        {"id":"laser-women","title":{"ru":"Для женщин","en":"Women","vi":"Nữ"},"image":"/client/visual/specialists/north-2861718.webp","rawCategories":["Женская эпиляция"]},
+        {"id":"laser-men","title":{"ru":"Для мужчин","en":"Men","vi":"Nam"},"image":"/client/visual/specialists/north-2849662.webp","rawCategories":["Мужская эпиляция"]}
       ]
     },
     {
       "id":"cosmetology",
       "title":{"ru":"Косметология","en":"Cosmetology","vi":"Thẩm mỹ da"},
-      "image":"/client/visual/catalog/cosmetology-care.webp",
+      "image":"/client/visual/service-cosmetology.webp",
       "subgroups":[
-        {"id":"cosmetology-consultation","title":{"ru":"Консультации","en":"Consultations","vi":"Tư vấn"},"image":"/client/visual/catalog/cosmetology-consultation.webp","rawCategories":["Консультация косметолога"]},
-        {"id":"cosmetology-care","title":{"ru":"Уходы и пилинги","en":"Care & peels","vi":"Chăm sóc & peel da"},"image":"/client/visual/catalog/cosmetology-care.webp","rawCategories":["Эстетические процедуры (косметология)"]},
-        {"id":"cosmetology-injections","title":{"ru":"Инъекционная косметология","en":"Injectable cosmetology","vi":"Thẩm mỹ tiêm"},"image":"/client/visual/catalog/cosmetology-injections.webp","rawCategories":["Биоревитализация","Мезотерапия","___Мезотерапия","Плацентарная терапия","Коллагенотерапия","Коллагеностимуляция","Инфузионная терапия","Ботулинотерапия","Контурная пластика","Нитевой лифтинг","Плазмотерапия"]},
-        {"id":"cosmetology-hardware","title":{"ru":"Аппаратная косметология","en":"Device cosmetology","vi":"Thẩm mỹ công nghệ cao"},"image":"/client/visual/catalog/cosmetology-hardware.webp","rawCategories":["Микроигольчатый RF-лифтинг"]},
-        {"id":"cosmetology-dermatology","title":{"ru":"Дерматология и удаления","en":"Dermatology & removal","vi":"Da liễu & loại bỏ tổn thương"},"image":"/client/visual/catalog/cosmetology-dermatology.webp","rawCategories":["Удаление новообразований"]}
+        {"id":"cosmetology-consultation","title":{"ru":"Консультации","en":"Consultations","vi":"Tư vấn"},"image":"/client/visual/specialists/saigon-2978198.webp","rawCategories":["Консультация косметолога"]},
+        {"id":"cosmetology-care","title":{"ru":"Уходы и пилинги","en":"Care & peels","vi":"Chăm sóc & peel da"},"image":"/client/visual/portfolio/cosmetology-01.webp","rawCategories":["Эстетические процедуры (косметология)"]},
+        {"id":"cosmetology-injections","title":{"ru":"Инъекционная косметология","en":"Injectable cosmetology","vi":"Thẩm mỹ tiêm"},"image":"/client/visual/specialists/saigon-2978196.webp","rawCategories":["Биоревитализация","Мезотерапия","___Мезотерапия","Плацентарная терапия","Коллагенотерапия","Коллагеностимуляция","Инфузионная терапия","Ботулинотерапия","Контурная пластика","Нитевой лифтинг","Плазмотерапия"]},
+        {"id":"cosmetology-hardware","title":{"ru":"Аппаратная косметология","en":"Device cosmetology","vi":"Thẩm mỹ công nghệ cao"},"image":"/client/visual/specialists/north-2830441.webp","rawCategories":["Микроигольчатый RF-лифтинг"]},
+        {"id":"cosmetology-dermatology","title":{"ru":"Дерматология и удаления","en":"Dermatology & removal","vi":"Da liễu & loại bỏ tổn thương"},"image":"/client/visual/specialists/north-3034741.webp","rawCategories":["Удаление новообразований"]}
       ]
     },
     {
       "id":"tattoo",
       "title":{"ru":"Тату и дермопигментация","en":"Tattoo & dermopigmentation","vi":"Tattoo & dermopigmentation"},
-      "image":"/client/visual/catalog/tattoo-art.webp",
+      "image":"/client/visual/service-tattoo.webp",
       "subgroups":[
-        {"id":"tattoo-art","title":{"ru":"Тату и дермопигментация","en":"Tattoo & dermopigmentation","vi":"Tattoo & dermopigmentation"},"image":"/client/visual/catalog/tattoo-art.webp","rawCategories":["Эстетика тела"]},
-        {"id":"tattoo-removal","title":{"ru":"Удаление тату","en":"Tattoo removal","vi":"Xóa hình xăm"},"image":"/client/visual/catalog/tattoo-removal.webp","rawCategories":["Удаление тату лазером"]}
+        {"id":"tattoo-art","title":{"ru":"Тату и дермопигментация","en":"Tattoo & dermopigmentation","vi":"Tattoo & dermopigmentation"},"image":"/client/visual/specialists/north-2122496.webp","rawCategories":["Эстетика тела"]},
+        {"id":"tattoo-removal","title":{"ru":"Удаление тату","en":"Tattoo removal","vi":"Xóa hình xăm"},"image":"/client/visual/portfolio/tattoo-removal-01.webp","rawCategories":["Удаление тату лазером"]}
       ]
     },
     {
       "id":"wellness",
       "title":{"ru":"Массаж","en":"Massage","vi":"Massage"},
-      "image":"/client/visual/catalog/massage.webp",
+      "image":"/client/visual/portfolio/manicure-02.webp",
       "subgroups":[
-        {"id":"massage","title":{"ru":"Массаж","en":"Massage","vi":"Massage"},"image":"/client/visual/catalog/massage.webp","rawCategories":["Массаж"]}
+        {"id":"massage","title":{"ru":"Массаж","en":"Massage","vi":"Massage"},"image":"/client/visual/specialists/saigon-2978161.webp","rawCategories":["Массаж"]}
       ]
     },
     {
       "id":"education",
       "title":{"ru":"Обучение","en":"Training","vi":"Đào tạo"},
-      "image":"/client/visual/catalog/training.webp",
+      "image":"/client/visual/service-gift.webp",
       "subgroups":[
-        {"id":"training","title":{"ru":"Обучение специалистов","en":"Professional training","vi":"Đào tạo chuyên môn"},"image":"/client/visual/catalog/training.webp","rawCategories":["Обучение"]}
+        {"id":"training","title":{"ru":"Обучение специалистов","en":"Professional training","vi":"Đào tạo chuyên môn"},"image":"/client/visual/specialists/north-3005950.webp","rawCategories":["Обучение"]}
       ]
     }
   ]
