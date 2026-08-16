@@ -1,11 +1,12 @@
 {
-  "version": 1,
+  "version": 2,
   "requiredDocuments": [
     "businessAnalysis",
     "psychologyMap",
     "offerArchitecture",
     "trustArchitecture",
     "productStrategy",
+    "catalogTaxonomy",
     "messagingGuide",
     "brandDiagnosis",
     "idealVisualStructure",
@@ -20,6 +21,7 @@
     "offerArchitecture": ["status", "entryOffers", "strategicOffers", "nextBestActions"],
     "trustArchitecture": ["status", "proofRequirements", "journeyPlacement"],
     "productStrategy": ["status", "jobsToBeDone", "primaryJourneys", "capabilities"],
+    "catalogTaxonomy": ["status", "hierarchy", "rules", "directions"],
     "messagingGuide": ["status", "tone", "vocabulary", "ctaSystem", "contentRules"],
     "brandDiagnosis": ["status", "preserve", "improve", "avoid", "targetPerception"],
     "idealVisualStructure": ["status", "artDirection", "paletteLogic", "imageSystem", "serviceGroupRules"],
@@ -27,6 +29,13 @@
     "imageProductionPlan": ["status", "globalDirection", "assets"],
     "analyticsPlan": ["status", "funnel", "events", "successMetrics"],
     "learningLoop": ["status", "defectRule", "successRule", "regressionPolicy"]
+  },
+  "catalogRules": {
+    "requiredHierarchy": ["direction", "subgroup", "service"],
+    "specialistsMayDefineHierarchy": false,
+    "rawCatalogMayRenderDirectly": false,
+    "requireUniqueSubgroupImages": true,
+    "requireRawCategoryCoverage": true
   },
   "imageRules": {
     "requireUniquePrimaryAssetPerServiceGroup": true,
