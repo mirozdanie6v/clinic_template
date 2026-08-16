@@ -17,16 +17,14 @@ const target = path.join(root, "app", "production-v1.tsx");
 if (!fs.existsSync(target)) throw new Error("catalog-ui: app/production-v1.tsx not found");
 
 let source = fs.readFileSync(target, "utf8");
-if (source.includes("catalog-direction-grid")) {
-  console.log("catalog-ui: taxonomy UI already applied");
-  process.exit(0);
-}
+const alreadyApplied = source.includes("catalog-direction-grid");
 
 const replaceOnce = (before, after, label) => {
   if (!source.includes(before)) throw new Error(`catalog-ui: marker not found: ${label}`);
   source = source.replace(before, after);
 };
 
+if (!alreadyApplied) {
 replaceOnce(
   'type ServiceGroup = { id: string; title: Localized; note: Localized; image: string; items: ServiceItem[] };',
   'type ServiceGroup = { id: string; taxonomyId?: string; directionId?: string; directionTitle?: Localized; directionImage?: string; title: Localized; note: Localized; image: string; items: ServiceItem[] };',
@@ -110,5 +108,36 @@ source = source.replace(
   ''
 );
 
-fs.writeFileSync(target, source);
-console.log("catalog-ui: applied direction -> subgroup -> service presentation");
+  fs.writeFileSync(target, source);
+  console.log("catalog-ui: applied direction -> subgroup -> service presentation");
+} else {
+  console.log("catalog-ui: taxonomy UI already applied");
+}
+
+const cssPath = path.join(root, "app", "production-v2.css");
+const cssMarker = "/* Catalog taxonomy UI */";
+if (fs.existsSync(cssPath)) {
+  let css = fs.readFileSync(cssPath, "utf8");
+  if (!css.includes(cssMarker)) {
+    css += `
+
+${cssMarker}
+.catalog-direction-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:0 0 20px}
+.catalog-direction-card{position:relative;min-height:168px;padding:0;border:1px solid var(--ui-line);border-radius:22px;overflow:hidden;background:var(--clinic-surface);text-align:left;box-shadow:var(--ui-shadow-soft)}
+.catalog-direction-card.active{border-color:var(--clinic-primary-dark);box-shadow:0 10px 28px rgba(38,39,31,.12)}
+.catalog-direction-image{display:block;width:100%;aspect-ratio:4/3;background-size:cover;background-position:center;background-color:var(--clinic-background)}
+.catalog-direction-copy{display:flex;flex-direction:column;gap:4px;padding:12px 13px 13px}
+.catalog-direction-copy b{font-size:13px;line-height:1.2}
+.catalog-direction-copy small{color:var(--clinic-muted);font-size:8px;line-height:1.3}
+.catalog-path{display:flex;align-items:end;justify-content:space-between;gap:16px;margin:0 2px 10px;padding-top:4px}
+.catalog-path span{font:500 26px/1.05 var(--font-display);letter-spacing:-.03em}
+.catalog-path small{max-width:38%;color:var(--clinic-muted);font-size:8px;text-align:right}
+.choice-group-title{display:flex;flex-direction:column;gap:3px}
+.choice-group-title small{color:var(--clinic-muted);font-size:7px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.choice-button .choice-copy{padding-left:2px}
+@media(max-width:360px){.catalog-direction-grid{grid-template-columns:1fr 1fr;gap:8px}.catalog-direction-card{min-height:150px}.catalog-direction-copy{padding:10px}.catalog-direction-copy b{font-size:12px}}
+`;
+    fs.writeFileSync(cssPath, css);
+    console.log("catalog-ui: appended taxonomy styles");
+  }
+}
