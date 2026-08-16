@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "eslint .",
     "sync:client": "node scripts/sync-client-sources.mjs",
-    "build:client": "node scripts/build-client-v3.mjs",
+    "build:client": "node scripts/build-client-v3.mjs && node scripts/apply-catalog-taxonomy-ui.mjs",
     "build:client:final": "node scripts/build-client-final.mjs",
     "validate:strategy": "node scripts/validate-client-strategy.mjs",
     "validate:visual": "node scripts/validate-visual-readiness.mjs",
