@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "status": "draft",
+  "presentationLevel": "subgroup",
+  "sourcePolicy": "External CRM/catalog structure is evidence only; customer-facing hierarchy must be normalized before UI assembly.",
+  "rules": {
+    "specialistsDefineHierarchy": false,
+    "locationsDefineHierarchy": false,
+    "serviceImagesAllowed": false,
+    "imagesAssignedTo": ["direction", "subgroup"],
+    "rawCategoriesRenderedDirectly": false,
+    "unmatchedPolicy": "other"
+  },
+  "directions": [
+    {"id":"example-direction","title":{"ru":"Направление","en":"Direction","vi":"Nhóm dịch vụ"},"image":"/client/visual/example-direction.webp","subgroups":[
+      {"id":"example-subgroup","title":{"ru":"Подгруппа","en":"Subgroup","vi":"Nhóm con"},"image":"/client/visual/example-subgroup.webp"}
+    ]},
+    {"id":"other","title":{"ru":"Другие услуги","en":"Other services","vi":"Dịch vụ khác"},"image":"/client/visual/hero-master.webp","subgroups":[
+      {"id":"other","title":{"ru":"Другие услуги","en":"Other services","vi":"Dịch vụ khác"},"image":"/client/visual/hero-master.webp"}
+    ]}
+  ],
+  "classification": [
+    {"subgroup":"example-subgroup","terms":["example"]}
+  ]
+}
