@@ -12,10 +12,11 @@
     "documents": {
       "type": "object",
       "required": [
-        "legal", "brand", "brandVoice", "audiences", "contacts", "locations", "social", "content", "dataSources", "catalog", "specialists", "portfolio", "reviews", "faq", "offers", "seo", "assets", "integrations", "provenance", "dataQuality", "quality",
+        "legal", "brand", "brandVoice", "audiences", "contacts", "locations", "social", "content", "dataSources", "catalog", "catalogTaxonomy", "specialists", "portfolio", "reviews", "faq", "offers", "seo", "assets", "integrations", "provenance", "dataQuality", "quality",
         "businessAnalysis", "psychologyMap", "offerArchitecture", "trustArchitecture", "productStrategy", "messagingGuide", "brandDiagnosis", "idealVisualStructure", "designSystemContract", "imageProductionPlan", "analyticsPlan", "learningLoop"
       ],
       "properties": {
+        "catalogTaxonomy": {"type": "string"},
         "visualDirection": {"type": "string"},
         "assetAudit": {"type": "string"},
         "quality": {"type": "string"},

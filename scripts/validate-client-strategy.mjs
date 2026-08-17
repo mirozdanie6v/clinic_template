@@ -48,6 +48,50 @@ for (const [docKey, requiredKeys] of Object.entries(rules.requiredTopLevelKeys |
   }
 }
 
+const taxonomy = docs.catalogTaxonomy;
+if (taxonomy) {
+  const requiredHierarchy = rules.catalogRules?.requiredHierarchy || ["direction", "subgroup", "service"];
+  if (JSON.stringify(taxonomy.hierarchy) !== JSON.stringify(requiredHierarchy)) {
+    errors.push(`catalogTaxonomy: hierarchy must be ${requiredHierarchy.join(" -> ")}`);
+  }
+  if (taxonomy.rules?.specialistsDefineHierarchy !== false) errors.push("catalogTaxonomy: specialistsDefineHierarchy must be false");
+  if (taxonomy.rules?.rawCatalogMayRenderDirectly !== false) errors.push("catalogTaxonomy: rawCatalogMayRenderDirectly must be false");
+  if (!Array.isArray(taxonomy.directions) || !taxonomy.directions.length) errors.push("catalogTaxonomy: directions must not be empty");
+
+  const directionIds = new Set();
+  const subgroupIds = new Set();
+  const rawCategories = new Map();
+  const subgroupImages = new Map();
+  for (const direction of taxonomy.directions || []) {
+    if (!direction?.id || !direction?.title) errors.push("catalogTaxonomy: direction requires id and title");
+    if (!direction?.image) errors.push(`catalogTaxonomy: direction ${direction?.id || "unknown"} requires image`);
+    if (directionIds.has(direction?.id)) errors.push(`catalogTaxonomy: duplicate direction id ${direction.id}`);
+    else if (direction?.id) directionIds.add(direction.id);
+    if (!Array.isArray(direction?.subgroups) || !direction.subgroups.length) errors.push(`catalogTaxonomy: direction ${direction?.id || "unknown"} has no subgroups`);
+
+    for (const subgroup of direction?.subgroups || []) {
+      if (!subgroup?.id || !subgroup?.title) errors.push(`catalogTaxonomy: subgroup in ${direction?.id || "unknown"} requires id and title`);
+      if (!subgroup?.image) errors.push(`catalogTaxonomy: subgroup ${subgroup?.id || "unknown"} requires image`);
+      if (subgroupIds.has(subgroup?.id)) errors.push(`catalogTaxonomy: duplicate subgroup id ${subgroup.id}`);
+      else if (subgroup?.id) subgroupIds.add(subgroup.id);
+      if (!Array.isArray(subgroup?.rawCategories) || !subgroup.rawCategories.length) errors.push(`catalogTaxonomy: subgroup ${subgroup?.id || "unknown"} requires rawCategories`);
+
+      if (rules.catalogRules?.requireUniqueSubgroupImages && subgroup?.image) {
+        const prior = subgroupImages.get(subgroup.image);
+        if (prior) errors.push(`catalogTaxonomy: subgroup image reused by ${prior} and ${subgroup.id}: ${subgroup.image}`);
+        else subgroupImages.set(subgroup.image, subgroup.id);
+      }
+      for (const raw of subgroup?.rawCategories || []) {
+        const key = String(raw || "").toLocaleLowerCase().replace(/ё/g, "е").replace(/\s+/g, " ").trim();
+        if (!key) continue;
+        const prior = rawCategories.get(key);
+        if (prior) errors.push(`catalogTaxonomy: raw category ${raw} mapped to both ${prior} and ${subgroup.id}`);
+        else rawCategories.set(key, subgroup.id);
+      }
+    }
+  }
+}
+
 const imagePlan = docs.imageProductionPlan;
 if (imagePlan && Array.isArray(imagePlan.assets)) {
   const seenGroups = new Map();

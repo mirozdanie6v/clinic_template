@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "status": "draft",
+  "sourceMode": "curated-taxonomy-over-raw-catalog",
+  "strictCoverage": true,
+  "hierarchy": ["direction", "subgroup", "service"],
+  "rules": {
+    "specialistsDefineHierarchy": false,
+    "rawCatalogMayRenderDirectly": false,
+    "serviceImages": "inherit-subgroup",
+    "subgroupImageRequired": true,
+    "directionImageRequired": true,
+    "uniqueSubgroupImage": true,
+    "preserveRawServiceIds": true,
+    "preserveExactServiceSpecialistRelations": true
+  },
+  "excludeRawCategories": [],
+  "directions": [
+    {
+      "id": "example-direction",
+      "title": {"ru":"Направление","en":"Direction","vi":"Nhóm chính"},
+      "image": "/client/visual/catalog/example-direction.webp",
+      "subgroups": [
+        {
+          "id": "example-subgroup",
+          "title": {"ru":"Подгруппа","en":"Subgroup","vi":"Nhóm dịch vụ"},
+          "image": "/client/visual/catalog/example-subgroup.webp",
+          "rawCategories": ["RAW_SOURCE_CATEGORY"]
+        }
+      ]
+    }
+  ]
+}
