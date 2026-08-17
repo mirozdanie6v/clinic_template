@@ -26,7 +26,11 @@ if (manifest.schemaVersion === 2 && manifest.documents) {
   buildPath = tempPath;
 }
 
-const builder = resolved.catalog?.autoDiscoverNetwork ? "build-client-exact-network-v3.mjs" : "build-client-routed.mjs";
+const builder = resolved.catalog?.taxonomyMode === "normalized"
+  ? "build-client-taxonomy-v1.mjs"
+  : resolved.catalog?.autoDiscoverNetwork
+    ? "build-client-exact-network-v3.mjs"
+    : "build-client-routed.mjs";
 const build = spawnSync(process.execPath, [path.join(root, "scripts", builder), buildPath], { cwd: root, stdio: "inherit" });
 if (build.status !== 0) { if (tempPath) fs.rmSync(tempPath, { force: true }); process.exit(build.status || 1); }
 
@@ -61,7 +65,7 @@ fs.writeFileSync(path.join(root, "app", "client-theme.generated.css"), themeCss)
 const runtimePath = path.join(root, "public", "client-data.json");
 if (fs.existsSync(runtimePath)) {
   const runtime = JSON.parse(fs.readFileSync(runtimePath, "utf8"));
-  for (const key of ["legal","brandVoice","audiences","social","portfolio","reviews","faq","offers","seo","assets","visualDirection","assetAudit","provenance","dataQuality","quality"]) {
+  for (const key of ["legal","brandVoice","audiences","social","portfolio","reviews","faq","offers","seo","assets","visualDirection","assetAudit","provenance","dataQuality","quality","catalogTaxonomy"]) {
     if (resolved[key] !== undefined) runtime[key] = resolved[key];
   }
   runtime.schemaVersion = resolved.schemaVersion || runtime.schemaVersion;
@@ -70,8 +74,6 @@ if (fs.existsSync(runtimePath)) {
   fs.writeFileSync(runtimePath, JSON.stringify(runtime, null, 2) + "\n");
 }
 
-// Public/build-safe strategy profile. Internal business and psychology analysis
-// stays in the Client Passport data-pack and is deliberately not emitted.
 const strategyProfile = {
   version: 1,
   client: resolved.client || null,
