@@ -13,7 +13,8 @@
     "validate:strategy": "node scripts/validate-client-strategy.mjs",
     "validate:visual": "node scripts/validate-visual-readiness.mjs",
     "validate:product": "node scripts/validate-product-quality.mjs",
-    "apply:clinic": "node scripts/apply-clinic-config.mjs"
+    "apply:clinic": "node scripts/apply-clinic-config.mjs",
+    "test:factory": "node --test factory-agent/test/*.test.mjs"
   },
   "dependencies": {
     "next": "latest",
