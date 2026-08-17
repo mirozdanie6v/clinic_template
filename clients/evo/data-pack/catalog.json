@@ -1,1 +1,1 @@
-{"autoDiscoverNetwork":true,"relationPolicy":"exact","priceDisplay":{"multiplier":1,"currency":"₫","locale":"vi-VN","status":"raw-unit-unconfirmed"}}
+{"autoDiscoverNetwork":true,"taxonomyMode":"normalized","relationPolicy":"exact","priceDisplay":{"multiplier":1,"currency":"₫","locale":"vi-VN","status":"raw-unit-unconfirmed"},"presentation":{"hierarchy":"direction>subgroup>service","specialistsDefineHierarchy":false,"locationsDefineHierarchy":false,"rawCategoriesRenderedDirectly":false,"imageLevel":["direction","subgroup"]}}
