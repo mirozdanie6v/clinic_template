@@ -1,0 +1,79 @@
+{
+  "version": 1,
+  "status": "approved",
+  "presentationLevel": "subgroup",
+  "sourcePolicy": "Raw CRM/Altegio categories are evidence only. UI hierarchy is semantic and customer-facing.",
+  "rules": {
+    "specialistsDefineHierarchy": false,
+    "locationsDefineHierarchy": false,
+    "serviceImagesAllowed": false,
+    "imagesAssignedTo": ["direction", "subgroup"],
+    "rawCategoriesRenderedDirectly": false,
+    "unmatchedPolicy": "other"
+  },
+  "directions": [
+    {"id":"hair","title":{"ru":"Волосы","en":"Hair","vi":"Tóc"},"image":"/client/visual/service-hair.webp","subgroups":[
+      {"id":"haircuts-styling","title":{"ru":"Стрижки и укладки","en":"Haircuts & styling","vi":"Cắt & tạo kiểu"},"image":"/client/visual/service-hair.webp"},
+      {"id":"hair-coloring","title":{"ru":"Окрашивание","en":"Hair coloring","vi":"Nhuộm tóc"},"image":"/client/visual/service-hair.webp"},
+      {"id":"blonding-correction","title":{"ru":"Блонд и коррекция цвета","en":"Blonding & color correction","vi":"Tẩy nhuộm & chỉnh màu"},"image":"/client/visual/service-hair.webp"},
+      {"id":"hair-care","title":{"ru":"Уход и восстановление","en":"Hair care & repair","vi":"Chăm sóc & phục hồi tóc"},"image":"/client/visual/service-hair.webp"},
+      {"id":"bio-perm","title":{"ru":"Завивка","en":"Perm","vi":"Uốn tóc"},"image":"/client/visual/service-hair.webp"},
+      {"id":"barber","title":{"ru":"Barber","en":"Barber","vi":"Barber"},"image":"/client/visual/service-hair.webp"}
+    ]},
+    {"id":"nails","title":{"ru":"Ногтевой сервис","en":"Nails","vi":"Nail"},"image":"/client/visual/service-manicure.webp","subgroups":[
+      {"id":"manicure","title":{"ru":"Маникюр","en":"Manicure","vi":"Manicure"},"image":"/client/visual/service-manicure.webp"},
+      {"id":"pedicure","title":{"ru":"Педикюр","en":"Pedicure","vi":"Pedicure"},"image":"/client/visual/service-pedicure.webp"}
+    ]},
+    {"id":"brows-lashes","title":{"ru":"Брови и ресницы","en":"Brows & lashes","vi":"Chân mày & mi"},"image":"/client/visual/service-brows-lashes.webp","subgroups":[
+      {"id":"brows","title":{"ru":"Брови","en":"Brows","vi":"Chân mày"},"image":"/client/visual/service-brows-lashes.webp"},
+      {"id":"lashes","title":{"ru":"Ресницы","en":"Lashes","vi":"Lông mi"},"image":"/client/visual/service-brows-lashes.webp"}
+    ]},
+    {"id":"pmu","title":{"ru":"Перманентный макияж","en":"Permanent makeup","vi":"Phun xăm thẩm mỹ"},"image":"/client/visual/service-pmu.webp","subgroups":[
+      {"id":"permanent-makeup","title":{"ru":"Перманентный макияж","en":"Permanent makeup","vi":"Phun xăm thẩm mỹ"},"image":"/client/visual/service-pmu.webp"}
+    ]},
+    {"id":"cosmetology","title":{"ru":"Косметология","en":"Cosmetology","vi":"Thẩm mỹ da"},"image":"/client/visual/service-cosmetology.webp","subgroups":[
+      {"id":"facial-care","title":{"ru":"Уход за лицом","en":"Facial care","vi":"Chăm sóc da mặt"},"image":"/client/visual/service-cosmetology.webp"},
+      {"id":"injections","title":{"ru":"Инъекционная косметология","en":"Injectables","vi":"Thẩm mỹ tiêm"},"image":"/client/visual/service-cosmetology.webp"},
+      {"id":"hardware-cosmetology","title":{"ru":"Аппаратная косметология","en":"Device cosmetology","vi":"Thẩm mỹ công nghệ"},"image":"/client/visual/service-cosmetology.webp"},
+      {"id":"body-care","title":{"ru":"Уход за телом","en":"Body care","vi":"Chăm sóc cơ thể"},"image":"/client/visual/service-cosmetology.webp"}
+    ]},
+    {"id":"laser","title":{"ru":"Лазерные процедуры","en":"Laser","vi":"Laser"},"image":"/client/visual/service-laser.webp","subgroups":[
+      {"id":"laser-hair-removal","title":{"ru":"Лазерная эпиляция","en":"Laser hair removal","vi":"Triệt lông laser"},"image":"/client/visual/service-laser.webp"}
+    ]},
+    {"id":"podology","title":{"ru":"Подология","en":"Podology","vi":"Podology"},"image":"/client/visual/service-podology.webp","subgroups":[
+      {"id":"podology-care","title":{"ru":"Подология","en":"Podology care","vi":"Chăm sóc podology"},"image":"/client/visual/service-podology.webp"}
+    ]},
+    {"id":"tattoo","title":{"ru":"Тату","en":"Tattoo","vi":"Tattoo"},"image":"/client/visual/service-tattoo.webp","subgroups":[
+      {"id":"tattoo-art","title":{"ru":"Татуировка","en":"Tattoo","vi":"Xăm nghệ thuật"},"image":"/client/visual/service-tattoo.webp"},
+      {"id":"tattoo-removal","title":{"ru":"Удаление тату","en":"Tattoo removal","vi":"Xóa xăm"},"image":"/client/visual/service-tattoo-removal.webp"}
+    ]},
+    {"id":"gift","title":{"ru":"Подарки","en":"Gifts","vi":"Quà tặng"},"image":"/client/visual/service-gift.webp","subgroups":[
+      {"id":"gift-certificates","title":{"ru":"Подарочные сертификаты","en":"Gift certificates","vi":"Phiếu quà tặng"},"image":"/client/visual/service-gift.webp"}
+    ]},
+    {"id":"other","title":{"ru":"Другие услуги","en":"Other services","vi":"Dịch vụ khác"},"image":"/client/visual/hero-master.webp","subgroups":[
+      {"id":"other","title":{"ru":"Другие услуги","en":"Other services","vi":"Dịch vụ khác"},"image":"/client/visual/hero-master.webp"}
+    ]}
+  ],
+  "classification": [
+    {"subgroup":"tattoo-removal","terms":["tattoo removal","удаление тату","удаление татуировки","laser tattoo"]},
+    {"subgroup":"laser-hair-removal","terms":["laser hair","hair removal","лазерная эпиля","эпиляц"]},
+    {"subgroup":"permanent-makeup","terms":["permanent makeup","перманент","pmu","microblading","микроблейдинг"]},
+    {"subgroup":"podology-care","terms":["подолог","podolog","ортон","унибрейс","вросшего ногтя","мозол","натоптыш","бородав"]},
+    {"subgroup":"lashes","terms":["ресниц","lash"]},
+    {"subgroup":"brows","terms":["бров","eyebrow","brow"]},
+    {"subgroup":"manicure","terms":["manicure","маникюр","nail extension","nail extention"]},
+    {"subgroup":"pedicure","terms":["pedicure","педикюр","foot treatment"]},
+    {"subgroup":"barber","terms":["barber","beard","men's haircut","clipper cut","scissor cut","мужская стриж","бород"]},
+    {"subgroup":"bio-perm","terms":["bio perm","биозавив","perm service","завивк"]},
+    {"subgroup":"blonding-correction","terms":["blond","blonde","color removal","correction","осветлен","выход из","смывк"]},
+    {"subgroup":"hair-coloring","terms":["hair coloring","hair toning","coloring","окраш","тонир","bright color","babylight","highlights"]},
+    {"subgroup":"hair-care","terms":["hair treatment","hair restoration","olaplex","tokio inkarami","lebel","davines","joico","hair lamination","уход для волос","восстановлен","счастье для волос","спа для волос"]},
+    {"subgroup":"haircuts-styling","terms":["haircut","hair cut","hairstyl","уклад","стриж","heat styling"]},
+    {"subgroup":"tattoo-art","terms":["tattoo","тату"]},
+    {"subgroup":"injections","terms":["botox","ботулин","filler","филлер","biorev","биорев","meso","мезо","collagen","коллаген","контурн","инъек"]},
+    {"subgroup":"hardware-cosmetology","terms":["rf","smаs","smas","hifu","plasma","плазм","аппарат","microcurrent","микроток","ultrasound","ультразв","phototherapy","фототерап"]},
+    {"subgroup":"body-care","terms":["body","тело","массаж","massage","лимф","lpg"]},
+    {"subgroup":"facial-care","terms":["cosmet","космет","facial","face care","пилинг","peel","чистка лица","skin care","уход за лиц"]},
+    {"subgroup":"gift-certificates","terms":["gift","certificate","сертифик"]}
+  ]
+}
